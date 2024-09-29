@@ -11,6 +11,7 @@ Provide up-to-date travel info for tourists
 Highlight local culture, events, and food spots
 Showcase hidden gems often overlooked by visitors
 Encourage sustainable and meaningful tourism in Prishtina
+
 ⚙️ Technologies Used
 HTML5 & CSS3 for the website structure and styling
 JavaScript for interactivity
