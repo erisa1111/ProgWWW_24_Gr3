@@ -32,4 +32,3 @@ Frontend: [HTML, CSS, JavaScript, JQuery]
 
 Contact us: Erisa Matoshi- erisamatoshi@gmail.com  Merjeme Bajrami- merjemeba3@gmail.com
 
-Have questions or suggestions? Contact us via merjemeba3@gmail.com and erisamatoshi@gmail.com   
