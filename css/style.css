@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
 @color-primary: #ef5285;
 @border-size: 3px;
 
@@ -5,11 +6,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
+  
+}
+body{
+    background-color: rgb(220, 229, 245);
 }
 
 header {
     width: 100%;
-    background-color: #2374AB;
+    
 }
 
 nav {
@@ -18,6 +24,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    background-color: rgba(245,245,245,0.5);
+    box-shadow: 0 4px 6px rgb(227, 197, 220);
+    margin-top: 10px;
+    border-radius: 15px;
+   
+    
 }
 
 .logo-div {
@@ -48,90 +60,72 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: bisque;
+    color: rgb(75, 30, 71);
+    font-size: 18px;
 }
 
 .search {
-    height: 30px;
-}
-
-input[type="search"] {
-    -webkit-appearance: searchfield;
-    font-family: 'Arvo', serif;
-    width: 40px; /* Adjust the width here */
-    height: 30px; /* Adjust the height here */
-    padding: 5px 10px; /* Adjust the padding here */
-    background: transparent;
-    border-radius: 20px; /* Keep the border-radius for rounded corners */
-    color: white;
-    font-size: 14px; /* Adjust font size if needed */
-    border: 2px solid currentColor; /* Replace @border-size with an actual value */
-    transition: all 0.5s ease-in-out; /* Correct transition syntax */
-}
-
-input[type="search"]:focus,
-input[type="search"]:active {
-    width: 200px; /* Width on focus or active */
+    width: 200px;
+    height: 35px;
+    padding: 0 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;  /* Rounded corners */
     outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 16px;
 }
 
-input[type="search"]:focus + .Label::after,
-input[type="search"]:active + .Label::after {
-    height: 25px;
-    right: 25px;
-    top: 14px;
-    bottom: 0px;
+/* Change border color when the input is focused */
+.search:focus {
+    border-color: rgb(220, 48, 174); /* Light blue when focused */
+    box-shadow: 0 0 8px rgba(35, 116, 171, 0.6); /* Light blue shadow on focus */
 }
 
-input[type="search"]:focus + .Label::before,
-input[type="search"]:active + .Label::before {
-    height: 25px;
-    right: 25px;
-    top: 14px;
+/* Placeholder styling */
+.search::placeholder {
+    color: #888;
+    opacity: 0.3;
 }
 
-input[type="search"]::-webkit-input-placeholder {
-    color: currentColor;
+/* Hover effect */
+.search:hover {
+    border-color: rgb(220, 48, 174);  /* Darker border on hover */
+    box-shadow: 0 0 6px rgba(136, 136, 136, 0.3); /* Subtle shadow effect on hover */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: rgb(220, 48, 174);
 }
 
-.Label {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 99;
-}
 
-.Label::before,
-.Label::after {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 2px; /* Replace @border-size with an actual value */
-    border-radius: 10px;
-    transition: all 0.7s ease-in-out; /* Correct transition syntax */
-    background: white;
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
 }
-
-.Label::after {
-    bottom: -22px;
-    right: -4px;
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: rgb(220, 48, 174);
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+.fa-solid{
+    width: 30px;
     height: 30px;
-    transform: rotate(135deg);
-}
-
-.Label::before {
-    height: 0;
-    right: 0;
-    top: 0;
-    transform: rotate(45deg);
-}
-
-.Search-form {
-    text-align: center;
-}
-
-.Search-inner {
-    position: relative;
+    color: aquamarine;
 }
