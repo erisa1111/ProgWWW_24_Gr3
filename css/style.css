@@ -1,0 +1,137 @@
+@color-primary: #ef5285;
+@border-size: 3px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background-color: #2374AB;
+}
+
+nav {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo-div {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo-div img {
+    margin-right: 10px;
+}
+
+
+nav img {
+    width: 60px;
+
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    width: 600px;
+    justify-content: space-evenly;
+
+
+}
+
+
+nav a {
+    text-decoration: none;
+    color: bisque;
+}
+
+.search {
+    height: 30px;
+}
+
+input[type="search"] {
+    -webkit-appearance: searchfield;
+    font-family: 'Arvo', serif;
+    width: 40px; /* Adjust the width here */
+    height: 30px; /* Adjust the height here */
+    padding: 5px 10px; /* Adjust the padding here */
+    background: transparent;
+    border-radius: 20px; /* Keep the border-radius for rounded corners */
+    color: white;
+    font-size: 14px; /* Adjust font size if needed */
+    border: 2px solid currentColor; /* Replace @border-size with an actual value */
+    transition: all 0.5s ease-in-out; /* Correct transition syntax */
+}
+
+input[type="search"]:focus,
+input[type="search"]:active {
+    width: 200px; /* Width on focus or active */
+    outline: none;
+}
+
+input[type="search"]:focus + .Label::after,
+input[type="search"]:active + .Label::after {
+    height: 25px;
+    right: 25px;
+    top: 14px;
+    bottom: 0px;
+}
+
+input[type="search"]:focus + .Label::before,
+input[type="search"]:active + .Label::before {
+    height: 25px;
+    right: 25px;
+    top: 14px;
+}
+
+input[type="search"]::-webkit-input-placeholder {
+    color: currentColor;
+}
+
+.Label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.Label::before,
+.Label::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 2px; /* Replace @border-size with an actual value */
+    border-radius: 10px;
+    transition: all 0.7s ease-in-out; /* Correct transition syntax */
+    background: white;
+}
+
+.Label::after {
+    bottom: -22px;
+    right: -4px;
+    height: 30px;
+    transform: rotate(135deg);
+}
+
+.Label::before {
+    height: 0;
+    right: 0;
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.Search-form {
+    text-align: center;
+}
+
+.Search-inner {
+    position: relative;
+}
