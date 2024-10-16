@@ -1,21 +1,29 @@
 # NewBornCode
-Explore Prishtina 🌍
-Welcome to the repository for [The name of our project/website], a travel guide that helps visitors discover all the hidden gems, landmarks, and local hotspots in Prishtina! This project is designed to show travelers what this amazing city offers, from historic sites to modern cafes.
+FindYourNanny
+Project Overview
+FindYourNanny is a professional platform designed to streamline the process of connecting parents with qualified nannies. Similar in structure to LinkedIn, the app offers two distinct user profiles—parents and nannies—allowing each to manage and display relevant information to foster efficient, reliable connections.
 
-🏙️ About the Project
-[Our Website Name] is built with love for Prishtina and its rich culture. Whether you’re visiting for the first time or are a returning explorer, this site is dedicated to giving you the best recommendations on what to do, see, and eat. Explore local landmarks like the Newborn Monument, enjoy a coffee in the city center, or catch a match with the Plisat fan group!
-
-This project is created to:
-
-Provide up-to-date travel info for tourists
-Highlight local culture, events, and food spots
-Showcase hidden gems often overlooked by visitors
-Encourage sustainable and meaningful tourism in Prishtina
-
-⚙️ Technologies Used
-HTML5 & CSS3 for the website structure and styling
-JavaScript for interactivity
-[Framework/Library] (if applicable)
-API integration (if we plan on integrating travel APIs like maps, weather, etc.)
+Features
+-Parents
+  Profile Management: Parents can create detailed profiles showcasing information such as:
+  Number of children
+  Children's ages
+  Location (city or region)
+  Post Availability: Parents can post job opportunities, specifying their needs for part-time, full-time, or occasional nanny services.
+  Interactive Features: Parents can interact with nannies' profiles, sending requests and receiving updates through notifications.
+-Nannies
+  Profile Customization: Nannies can create comprehensive profiles highlighting:
+  Availability for full-time, part-time, or freelance work
+  Preferences for working locally or abroad
+  Job Search: Nannies can browse and apply to job postings created by parents.
+  Professional Status: Nannies can update their status to show availability and location preferences for potential employers.
+  Interactive Features: Nannies can add parents, engage with job listings, and receive notifications about new opportunities.
+-Key Functionalities
+  Profile Connections: Both parents and nannies can add each other to build a trusted network, similar to LinkedIn's connection features.
+  Comments and Likes: Users can engage with posts by commenting and liking, enhancing interaction within the community.
+  Notifications: Real-time updates inform users about new job opportunities and connection requests.
+  Data Management: All profile data, posts, and interactions are securely saved in a dedicated database.
+-Technology Stack
+Frontend: [HTML, CSS, JavaScript, JQuery]
 
 Have questions or suggestions? Contact us via merjemeba3@gmail.com and erisamatoshi@gmail.com 
