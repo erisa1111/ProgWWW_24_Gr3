@@ -26,4 +26,4 @@ Features
 -Technology Stack
 Frontend: [HTML, CSS, JavaScript, JQuery]
 
-Have questions or suggestions? Contact us via merjemeba3@gmail.com and erisamatoshi@gmail.com 
+Have questions or suggestions? Contact us via merjemeba3@gmail.com and erisamatoshi@gmail.com   
