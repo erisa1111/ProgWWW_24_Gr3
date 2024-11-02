@@ -5,34 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Nanny</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="css/notifications.css">
+   
 </head>
 <body>
     <header>
-        <nav class="stroke">
-            <div class="logo-div">
-                <img src="img/baby.png" alt="" class="icon">
-               <input type="text" placeholder="Search" class="search">
-              
-            </div>
-
-
-            
-            <ul>
-                <li><a href="index.html"> <i class="fa-solid fa-house-chimney"></i>Home</a></li>
-                
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="messaging.html">Messaging</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-            </ul>
-            <a href="profile.html">
-                <img src="/img/profile.png" alt="" class="profile">
-            </a>
-        </nav>
+        <div id="nav-placeholder"></div>
     </header>
+
     <div class="content">
         <h2>This is the notifications page</h2>
-        <p>Manage ur network, connections and all that!</p>
+        <p>Can you see the posts? There are none, lol.</p>
     </div>
+
+    <!-- Funksioni per me mar nav -->
+    <script>
+        document.getElementById("nav-placeholder").innerHTML = fetch("nav.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("nav-placeholder").innerHTML = data);
+    </script>
 </body>
 </html>

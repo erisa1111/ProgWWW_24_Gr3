@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Your Nanny</title>
+    <title>Find Your Nanny - Jobs</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="css/jobs.css">
+    
 </head>
 <body>
     <header>
-        <nav class="stroke">
-            <div class="logo-div">
-                <img src="img/baby.png" alt="" class="icon">
-               <input type="text" placeholder="Search" class="search">
-              
-            </div>
-
-
-            
-            <ul>
-                <li><a href="index.html"> <i class="fa-solid fa-house-chimney"></i>Home</a></li>
-                
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="messaging.html">Messaging</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-            </ul>
-            <a href="profile.html">
-                <img src="/img/profile.png" alt="" class="profile">
-            </a>
-        </nav>
+        <div id="nav-placeholder"></div>
     </header>
-    <<div class="content">
+
+    <div class="content">
         <h2>This is the jobs page</h2>
-        <p>Find out more about jobs/recommandations</p>
+        <p>Job recomendations</p>
     </div>
+
+    <script>
+        async function loadNav() {
+            const navPlaceholder = document.getElementById("nav-placeholder");
+            const response = await fetch("nav.html");
+            const navHtml = await response.text();
+            navPlaceholder.innerHTML = navHtml;
+        }
+
+        loadNav();
+    </script>
 </body>
 </html>
