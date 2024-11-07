@@ -17,15 +17,6 @@
         <p>Job recomendations</p>
     </div>
 
-    <script>
-        async function loadNav() {
-            const navPlaceholder = document.getElementById("nav-placeholder");
-            const response = await fetch("nav.html");
-            const navHtml = await response.text();
-            navPlaceholder.innerHTML = navHtml;
-        }
-
-        loadNav();
-    </script>
+    <script src="/navbar/nav.js"> </script>
 </body>
 </html>

@@ -9,20 +9,14 @@
 </head>
 <body>
     <header>
-     
         <div id="nav-placeholder"></div>
     </header>
 
     <div class="content">
-        <h2>This is the messages page</h2>
+        <h2>This is the frequent answers page</h2>
         <p>Can you see the posts? There are none, lol.</p>
     </div>
 
-    <!-- Funksioni per me mar nav -->
-    <script>
-        document.getElementById("nav-placeholder").innerHTML = fetch("nav.html")
-            .then(response => response.text())
-            .then(data => document.getElementById("nav-placeholder").innerHTML = data);
-    </script>
+    <script src="/navbar/nav.js"> </script>
 </body>
 </html>
