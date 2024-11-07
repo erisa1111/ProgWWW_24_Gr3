@@ -7,6 +7,7 @@ async function loadNav() {
 
     // Once the navbar is injected, set the active link
     setActiveLink();
+    setActiveLink2();
 }
 
 // Function to highlight the active page in the navbar
@@ -25,6 +26,20 @@ function setActiveLink() {
     });
 }
 
+function setActiveLink2() {
+    // Get all the navigation links
+    const navItems = document.querySelectorAll('.nav-item2');
+    // Get the current path of the URL (only the file name)
+    const currentPath = window.location.pathname.split('/').pop();
+
+    // Iterate over all the nav items
+    navItems.forEach(link => {
+        // Compare the link's href with the current page URL (current file)
+        if (currentPath === link.getAttribute('href')) {
+            link.classList.add('active');
+        }
+    });
+}
 // Load the navbar when the page is ready
 document.addEventListener('DOMContentLoaded', loadNav);
 

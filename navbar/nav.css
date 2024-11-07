@@ -85,7 +85,8 @@ nav ul li a:before {
     transition: all 0.5s;
 }
 
-.right_nav li a:hover {
+.nav-item2:hover,
+.nav-item2.active{
     color: #e2687e;
     padding: 15px;
     background-color: #f9e4e7;
