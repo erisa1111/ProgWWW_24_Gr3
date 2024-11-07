@@ -43,12 +43,14 @@ nav {
     list-style-type: none;
     width: 600px;
     justify-content: right;
+    align-items: center;
     
 
 }
 .right_nav li{
     width: 150px;
     text-align: center;
+    align-items: center;
     
    
 }
@@ -93,6 +95,68 @@ nav ul li a:before {
     border-radius: 30px;
     
 }
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button style */
+.dropdown-toggle {
+  background-color: #f6f6f6;
+  color: #e2687e;
+  font-size: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  height: 50px;
+}
+
+/* Dropdown menu (hidden by default) */
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  border-radius: 5px;
+  z-index: 1;
+
+}
+
+
+/* Show the dropdown menu when parent is hovered */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown item styles */
+.dropdown-item {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for items */
+.dropdown-item:hover {
+  background-color: #f9e4e7;
+  color: #674d51;
+}
+
+
+
+
+
+
 
 
 

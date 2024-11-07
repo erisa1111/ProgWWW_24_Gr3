@@ -40,6 +40,11 @@ function setActiveLink2() {
         }
     });
 }
+
+
+// Get all the dropdown items
+
+
 // Load the navbar when the page is ready
 document.addEventListener('DOMContentLoaded', loadNav);
 
