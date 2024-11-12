@@ -7,6 +7,7 @@
 }
 main{
     width: 85%;
+    height: 750px;
     
     display: flex;
     margin: 0 auto;
@@ -16,10 +17,10 @@ main{
 }
 
 main img{
-    width: 40%;
+    width: 37%;
 }
 .main_text{
-    width: 40%;
+    width: 37%;
 }
 .main_p{
     color: #5a3f42;
@@ -85,12 +86,10 @@ main img{
     background-image: url("../img/Cute-Room.jpg");
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     position:relative;
     width:100%;
-    height:80vh;
+    height:90vh;
   
     
 }
@@ -98,15 +97,23 @@ main img{
 .overlay{
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 80vh;
+    height: 90vh;
+    margin: 0 auto;
 
 }
 .text{
    color: white;
    /*width: 400px;*/
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
    text-align: center;
+ 
    padding: 2rem;
-   margin-top:10vh ;
+  
+   height: 100%;
+   
 
 }
 
@@ -121,22 +128,31 @@ h1 {
 }
 
 .buttons {
-   /* display: flex;*/
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
     margin-top: 1.5rem;
 }
 
 .btn {
-    padding: 0.7rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 25px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn_login:hover{
+    background-color: white ;
+    color:gray;
     transform: scale(1.1);
 }
-
+.btn_signup:hover{
+    background-color:#e2687e ;
+    color: white;
+    transform: scale(1.1);
+}
 
 .btn_login {
     background-color: rgba(255, 255, 255, 0.2);
@@ -145,16 +161,20 @@ h1 {
 
 .btn_signup {
     background-color: white; 
-    color:#ec428d;
+    color:#e2687e;
 }
 
 .content{
     display: flex;
-    margin-top:170px;
-    margin-left: 80px;
-    margin-right: 80px;
+    
+   display: flex;
+   height:700px;
+   width: 80%;
+  margin: 0 auto;
+   justify-content: space-around;
+   align-items: center;
     /*justify-content:space-around;*/
-    align-items:start;
+ 
     position:relative;
     gap: 3rem;
 }
@@ -167,37 +187,50 @@ h1 {
 .cont_opinions{
    /*margin-top: 5px;*/
    /*background-color: bisque;*/
+   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+   gap: 2rem;
    margin-left: 80px;
    color: #474036;
    text-align: justify;
+   
 }
 .cont_opinions #opinions_p{
     font-size: 50px;
     margin-top: 5px;
     line-height: 0.9;
+    
 }
 .cont_opinions #opinions{
     border-left: 3px solid lightgray; 
     padding-left: 20px;
+  
 }
 .opinion_author{
-    display: flex;
-    /*justify-content:space-around;*/
-    align-items:end;
     position:relative;
-    gap: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
  }
  #author_name{
     border-left: 3px solid lightgray; 
     padding-left: 20px;
     width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
  }
 
 .opinion_btn {
-    /* display: flex;*/
-     gap: 2rem;
+   
+     gap: 1rem;
      margin-top: 1.5rem;
-     width: 200px;
+     width: 100px;
+     display: flex;
+     justify-content: right;
  }
  
  #but {
@@ -213,91 +246,168 @@ h1 {
  
  
  #btn_next{
-     background-color: lightgrey;
-     color: white;
+     background-color: white;
+     color: lightgray;
+    padding: 12px 15px;
+     border-radius: 50%;
+     border: 2px solid lightgray;
+     
      
  }
  
  #btn_back {
-     background-color:lightgrey; 
-     color:#ec428d;
+     background-color:white; 
+     color: lightgray;
+     padding: 12px 15px;
+     border-radius: 50%;
+     border: 2px solid lightgray;
  }
 
-
- /*.cont_opinions {
+ .fa-arrow-left:hover{
+    color: #e2687e;
+ }
+ .fa-arrow-right:hover{
+    color: #e2687e;
+ }
+ #btn_back:hover {
+    background-color:#f9e4e7; 
+    color: #e2687e;
+    border: 2px solid #f9e4e7;
+}
+#btn_next:hover {
+    background-color:#f9e4e7; 
+    color: #e2687e;
+    border: 2px solid #f9e4e7;
+}
+#features_{
+    width: 100%;
+    height: 600px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
+    gap: 80px;
 }
-
-
-.opinions_p {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0;
-}
-
-
-.opinions {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-.opinion_author {
+.features_cards{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin:0 auto;
+}
+.features_content{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+  
+   text-align: left;
+    width: 90%;
+    margin:0 auto;
+    
+
+}
+.card{
+    width: 25%;
+    padding: 40px;
+    background-color: lightgrey;
+    border-radius: 10%;
+}
+.card img{
+
+    width: 100px;
 }
 
+#faq_{
+    display: flex;
+    margin-top:170px;
+    margin-left: 80px;
+    margin-right: 80px;
+    justify-content:space-around;
+    align-items:start;
+    position:relative;
+    gap: 2rem;
+    color:  #5a3f42;
 
-.author_name p:first-child {
+ }
+ #answers{
+    margin-top: 20px;
+ }
+
+ details {
+    margin: 15px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+
+  summary {
     font-weight: bold;
-    margin: 0;
-}
-
-.author_name p:last-child {
-    font-size: 0.9rem;
-    color: #888;
-    margin: 0;
-}
-
-
-.opinion_btn {
-    display: flex;
-    gap: 10px;
-}
-
-
-.but {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #007bff;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.1em;
     cursor: pointer;
-    color: #fff;
+    padding: 10px 0;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] summary {
+    color: #e2687e;
+  }
+
+  details[open] summary::after {
+    content: '▲';
+    float: right;
+    font-size: 0.8em;
+    color: #e2687e;
+  }
+
+  summary::after {
+    content: 'ˇ';
+    float: right;
+    font-size: 0.8em;
+    color: #333;
+  }
+  .faq-content {
+    max-height: 100px; 
+    max-width: 400px; 
+    overflow-y: auto;
+    margin-top: 10px;
+    color: #5a3f42;
+    padding-right: 10px;;
+  }
+
+  .faq-content a {
+    color: #e2687e;
+    text-decoration: none;
+  }
+  .faq_title{
+    width: 45%;
+    /* padding: 40px;*/
+     margin-left:40px ;
+  }
+  .questions{
+    margin-left: 80px;
+   color:  #5a3f42;;
+  }
+  p{
+    font-size: medium;
+  }
+  #faq_more {
+    margin-top:20px;
+    color: #e2687e;
+    background-color: #f9e4e7;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: "Ubuntu", serif;
+    font-weight: 500;
 }
 
-.btn_back::before {
-    content: "<";
-    color: white;
-    font-size: 1.2rem;
+#faq_more:hover {
+    background-color: #e2687e;
+    color: #f6f6f6;
 }
-
-.btn_next img {
-    width: 15px;
-    height: 15px;
-}*/
 
 
 
