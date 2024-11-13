@@ -6,9 +6,12 @@
     <title>Find Your Nanny</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body onload="loadCard()">
+
     <header>
         <div id="nav-placeholder"></div>
     </header>
@@ -52,22 +55,8 @@
         </div>
 
     </section>
+    <div id="sign_up"></div>
 
-    <div id="sign_up">
-        <!-- Additional Structure Section -->
-        <div class="top">
-            <div class="overlay">
-                <div class="text">
-                    <p>Are you looking for a job?</p>
-                    <h1>Start your ChildCare <br> career today</h1>
-                    <div class="buttons">
-                        <button class="btn btn_login"><strong>Log in</strong></button>
-                        <button class="btn btn_signup"><strong>Sign up</strong></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
         <!-- Opinions Section -->
         <div class="content" id="reviews_">
@@ -148,8 +137,9 @@
 
 
   
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="navbar/nav.js"> </script>
     <script src="js/script.js"></script>
+    <script src="signin/signin.js"></script>
 </body>
 </html>
