@@ -36,4 +36,3 @@ function updateTestimonial() {
     opinionsElement.innerText = testimonial.text;
     authorNameElement.innerHTML = `<p>${testimonial.name}</p><p>${testimonial.role}</p>`;
 }
-
