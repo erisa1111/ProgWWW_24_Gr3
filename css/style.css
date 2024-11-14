@@ -8,16 +8,33 @@ body{
   font-family: Open Sans;
 }
 main{
-    width: 85%;
+  /*  width: 85%;
     height: 750px;
+    display: flex;
+    margin: 0 auto;
+    justify-content:space-around;
+    align-items: center;*/
+    background-image:url("../img/Project\ \(8\).jpg");
+    height: 750px;
+    align-content: center;
     
+}
+.about_{
+    background-color: white;
+    width: 80%;
+    /*height: 570px;*/
+    padding: 20px;
+
+    height: auto;
     display: flex;
     margin: 0 auto;
     justify-content:space-around;
     align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     
+  
 }
-
 main img{
     width: 37%;
 }
@@ -266,7 +283,6 @@ h1 {
     text-align: center;
     gap: 1em;
     padding: 30px;
-    
     background-color: #f9e4e7;
     border-radius: 10%;
     color: #5a3f42;

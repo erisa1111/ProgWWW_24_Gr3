@@ -24,19 +24,32 @@
 
 .card-toggle {
 	z-index: 4;
-	position: relative;
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	display: block;
-	text-align: center;
-	line-height: 1.8;
-	font-size: 24px;
-	cursor: pointer;
-	border: 2px solid transparent;
-	transition: 0.3s ease;
-	color: #e2687e;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    color: #e2687e;
+   
 }
+/*icona e nany vendoset 20px left prej divit*/
+.card-toggle:nth-child(1) {
+    left: 20px;
+}
+
+/*per me vendos qat iconen e userit(qe osht second child) pak ma anash asaj te nanny */
+.card-toggle:nth-child(2) {
+    left: 78px; 
+}
+	
 
 .card-toggle.active {
 	color: white;
