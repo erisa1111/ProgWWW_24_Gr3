@@ -9,7 +9,7 @@ async function loadNav() {
         navPlaceholder.innerHTML = navHtml;
         setActiveLink();
         initializeSearchIcon();
-        initializeSuggestionList(); // Call the suggestion list function here
+        initializeSuggestionList(); 
     } catch (error) {
         console.error("Error loading navbar:", error);
     }
@@ -73,20 +73,20 @@ const suggestions = [
     },
 ];
 
-// This function will initialize the search suggestion list
+
 function initializeSuggestionList() {
     const searchInput = document.getElementById('search-bar');
     const suggestionList = document.getElementById('suggestion-list');
-    // Handle search input and filter suggestions
+   
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
-        suggestionList.innerHTML = ''; // Clear previous suggestions
+        suggestionList.innerHTML = ''; 
         if (query) {
-            // Filter suggestions based on input
+        
             const filteredSuggestions = suggestions.filter((item) =>
                 item.name.toLowerCase().includes(query)
             );
-            // Add filtered suggestions to the list
+           
             filteredSuggestions.forEach((item) => {
                 const li = document.createElement('li');
                 li.classList.add('suggestion-item');
@@ -105,23 +105,23 @@ function initializeSuggestionList() {
                 li.appendChild(infoDiv);
                 li.addEventListener('click', () => {
                     searchInput.value = item.name;
-                    suggestionList.style.display = 'none'; // Hide suggestions on selection
+                    suggestionList.style.display = 'none'; 
                 });
                 suggestionList.appendChild(li);
             });
-            suggestionList.style.display = 'block'; // Show suggestions
+            suggestionList.style.display = 'block'; 
         } else {
-            suggestionList.style.display = 'none'; // Hide suggestions if input is empty
+            suggestionList.style.display = 'none'; 
         }
     });
-    // Close the suggestion list if clicking outside of the search input
+   
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-container')) {
             suggestionList.style.display = 'none';
         }
     });
 }
-// Load navigation on page load
+
 document.addEventListener("DOMContentLoaded", loadNav);
 
 
