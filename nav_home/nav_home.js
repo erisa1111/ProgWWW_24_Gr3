@@ -14,6 +14,7 @@ async function loadNav() {
         console.error("Error loading navbar:", error);
     }
 }
+
 function setActiveLink() {
     const navItems = document.querySelectorAll(".nav-item");
     const currentPath = window.location.pathname.split("/").pop();
@@ -25,9 +26,11 @@ function setActiveLink() {
         }
     });
 }
+
 function initializeSearchIcon() {
     const search = document.getElementById("search_icon");
     const input = document.getElementById("search-bar");
+
     if (search && input) {
         search.addEventListener("click", function () {
             if (input.style.width === "0px" || input.style.width === "") {
@@ -40,6 +43,7 @@ function initializeSearchIcon() {
         console.error("Required elements are missing.");
     }
 }
+
 const suggestions = [
     {
         name: 'Nanny Anna',
@@ -74,47 +78,59 @@ const suggestions = [
 ];
 
 
+
 function initializeSuggestionList() {
     const searchInput = document.getElementById('search-bar');
     const suggestionList = document.getElementById('suggestion-list');
-   
+
+
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
         suggestionList.innerHTML = ''; 
+
         if (query) {
-        
+          
             const filteredSuggestions = suggestions.filter((item) =>
                 item.name.toLowerCase().includes(query)
             );
-           
+
+         
             filteredSuggestions.forEach((item) => {
                 const li = document.createElement('li');
                 li.classList.add('suggestion-item');
+
                 const img = document.createElement('img');
                 img.src = item.profilePic;
                 img.alt = item.name;
+
                 const infoDiv = document.createElement('div');
                 infoDiv.classList.add('info');
                 const name = document.createElement('h4');
                 name.textContent = item.name;
                 const description = document.createElement('p');
                 description.textContent = item.description;
+
                 infoDiv.appendChild(name);
                 infoDiv.appendChild(description);
+
                 li.appendChild(img);
                 li.appendChild(infoDiv);
+
                 li.addEventListener('click', () => {
                     searchInput.value = item.name;
                     suggestionList.style.display = 'none'; 
                 });
+
                 suggestionList.appendChild(li);
             });
+
             suggestionList.style.display = 'block'; 
         } else {
             suggestionList.style.display = 'none'; 
         }
     });
-   
+
+
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.search-container')) {
             suggestionList.style.display = 'none';
@@ -122,6 +138,5 @@ function initializeSuggestionList() {
     });
 }
 
+
 document.addEventListener("DOMContentLoaded", loadNav);
-
-
