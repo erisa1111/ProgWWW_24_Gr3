@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Drawing with Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f7f7f7;
+        }
+        svg {
+            width: 200px;
+            height: 300px;
+            margin-top: 50px;
+        }
+        canvas {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+        }
+        .field {
+            margin-top: 50px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WELCOME TO THE HELPING CENTER</h1>
+
+    <!-- Hangman SVG Drawing -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+        <!-- Stand -->
+        <line x1="50" y1="250" x2="50" y2="50" stroke="black" stroke-width="3"/>
+        <line x1="50" y1="50" x2="150" y2="50" stroke="black" stroke-width="3"/>
+        <line x1="150" y1="50" x2="150" y2="100" stroke="black" stroke-width="3"/>
+
+        <!-- Head -->
+        <circle cx="150" cy="130" r="30" stroke="black" stroke-width="3" fill="none"/>
+
+        <!-- Body -->
+        <line x1="150" y1="160" x2="150" y2="200" stroke="black" stroke-width="3"/>
+
+        <!-- Arms -->
+        <line x1="120" y1="170" x2="180" y2="170" stroke="black" stroke-width="3"/>
+
+        <!-- Legs -->
+        <line x1="130" y1="200" x2="120" y2="250" stroke="black" stroke-width="3"/>
+        <line x1="170" y1="200" x2="180" y2="250" stroke="black" stroke-width="3"/>
+    </svg>
+
+    <!-- Canvas with quote -->
+    <canvas id="quoteCanvas" width="500" height="100"></canvas>
+    <script>
+        var canvas = document.getElementById("quoteCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Draw the quote text on the canvas
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("There is a solution to every problem.", 20, 30);
+        ctx.fillText("No need to suicide.", 20, 60);
+    </script>
+
+<h1>There is Always Hope!</h1>
+
+<!-- First Green field with flowers -->
+<div class="field">
+    <h2>There is always a way forward, no matter the situation. No need for suicide!</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+        <!-- Green field -->
+        <rect x="0" y="100" width="500" height="100" fill="green" />
+        <!-- Flowers -->
+        <circle cx="80" cy="150" r="10" fill="yellow" />
+        <circle cx="80" cy="150" r="4" fill="red" />
+        <circle cx="150" cy="160" r="12" fill="purple" />
+        <circle cx="150" cy="160" r="4" fill="white" />
+        <circle cx="220" cy="140" r="15" fill="pink" />
+        <circle cx="220" cy="140" r="5" fill="yellow" />
+        <circle cx="300" cy="155" r="13" fill="blue" />
+        <circle cx="300" cy="155" r="5" fill="white" />
+        <circle cx="380" cy="150" r="14" fill="orange" />
+        <circle cx="380" cy="150" r="5" fill="yellow" />
+    </svg>
+</div>
+
+<!-- Second Green field with flowers -->
+<div class="field">
+    <h2>Stay Strong! Every problem has a solution!</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+        <!-- Green field -->
+        <rect x="0" y="100" width="500" height="100" fill="green" />
+        <!-- Flowers -->
+        <circle cx="100" cy="160" r="10" fill="yellow" />
+        <circle cx="100" cy="160" r="5" fill="blue" />
+        <circle cx="170" cy="170" r="12" fill="violet" />
+        <circle cx="170" cy="170" r="6" fill="pink" />
+        <circle cx="250" cy="145" r="14" fill="red" />
+        <circle cx="250" cy="145" r="6" fill="white" />
+        <circle cx="320" cy="150" r="11" fill="pink" />
+        <circle cx="320" cy="150" r="4" fill="yellow" />
+        <circle cx="380" cy="170" r="15" fill="orange" />
+        <circle cx="380" cy="170" r="6" fill="red" />
+    </svg>
+</div>
+
+<div class="field">
+    <h2>There is always light at the end of the tunnel. Keep going!</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+  
+        <rect x="0" y="100" width="500" height="100" fill="green" />
+     
+        <circle cx="60" cy="150" r="12" fill="purple" />
+        <circle cx="60" cy="150" r="4" fill="white" />
+        <circle cx="140" cy="165" r="10" fill="blue" />
+        <circle cx="140" cy="165" r="5" fill="yellow" />
+        <circle cx="210" cy="145" r="15" fill="yellow" />
+        <circle cx="210" cy="145" r="5" fill="pink" />
+        <circle cx="290" cy="160" r="13" fill="red" />
+        <circle cx="290" cy="160" r="6" fill="white" />
+        <circle cx="370" cy="150" r="14" fill="orange" />
+        <circle cx="370" cy="150" r="5" fill="purple" />
+        <circle cx="60" cy="150" r="12" fill="purple" />
+        <circle cx="60" cy="150" r="4" fill="white" />
+        <circle cx="140" cy="165" r="10" fill="blue" />
+        <circle cx="140" cy="165" r="5" fill="yellow" />
+        <circle cx="210" cy="145" r="15" fill="yellow" />
+        <circle cx="210" cy="145" r="5" fill="pink" />
+        <circle cx="290" cy="160" r="13" fill="red" />
+        <circle cx="290" cy="160" r="6" fill="white" />
+        <circle cx="370" cy="150" r="14" fill="orange" />
+        <circle cx="370" cy="150" r="5" fill="purple" />
+    </svg>
+</div>
+
+<div class="field">
+    <h2>Never give up! You are stronger than you think.</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+       
+        <rect x="0" y="100" width="700" height="500" fill="green" />
+     
+        <circle cx="90" cy="150" r="11" fill="yellow" />
+        <circle cx="90" cy="150" r="5" fill="red" />
+        <circle cx="160" cy="155" r="13" fill="blue" />
+        <circle cx="160" cy="155" r="6" fill="white" />
+        <circle cx="240" cy="145" r="14" fill="pink" />
+        <circle cx="240" cy="145" r="6" fill="yellow" />
+        <circle cx="320" cy="160" r="12" fill="violet" />
+        <circle cx="320" cy="160" r="5" fill="orange" />
+        <circle cx="400" cy="155" r="10" fill="green" />
+        <circle cx="400" cy="155" r="5" fill="yellow" />
+    </svg>
+</div>
+
+</body>
+</html>
