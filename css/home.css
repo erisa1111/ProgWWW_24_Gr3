@@ -299,29 +299,15 @@ body {
     z-index: 1;
   }
   
-  .overlay-text {
-    position: absolute;
+ 
+
+  video{
     width: 100%;
-    top: 85%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 2; 
-    color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5); 
-    padding: 10px 20px;
+    height: 100%; /* Ensure the video takes up the full height of its container */
+    object-fit: cover; /* Crops the video to fill the container while maintaining aspect ratio */
+    overflow: hidden;
     border-radius: 10px;
-    font-family: Arial, sans-serif;
-  }
   
-  .overlay-text h2 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .overlay-text p {
-    font-size: 0.8rem;
-    margin: 0;
   }
 
   

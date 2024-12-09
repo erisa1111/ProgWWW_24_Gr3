@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Nanny</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="css/style.css">
 
 
@@ -18,6 +18,11 @@
     <header>
         <div id="nav-placeholder"></div>
     </header>
+    <audio id="welcomeAudio" autoplay>
+        <source src="audio/baby-giggle-85158.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
     <main id="about_">
 
         <div class="about_">
@@ -172,15 +177,26 @@
             <div class="col3">
                 <ul>
                     <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                   
                     <li><a href="#TermsServices"><i class="fas fa-file-contract"></i> Terms of Services</a></li>
                     <li><a href="#PrivacyPolicy"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
+                    
                 </ul>
             </div>
         </div>
         <div class="rowbottom">
+            <p>Ky website i leht&euml;son &ccedil;do familjeje procesin e gjetjes s&euml; dados perfekte p&euml;r ta!
+            </p>
             <p>&copy; 2024 Dado. All rights reserved to Merjeme Bajrami and Erisa Matoshi.</p>
         </div>
     </footer>
+
+    <script>
+        window.addEventListener('load', function () {
+            const audio = document.getElementById("welcomeAudio");
+            audio.play(); 
+        });
+    </script>
 
 
 
