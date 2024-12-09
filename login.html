@@ -39,6 +39,30 @@
             </div>
         </div>
     </div>
+    <script>
+        // This code will execute as soon as the DOM content is loaded
+        window.onload = function() {
+            // Check if geolocation is available in the browser
+            if (navigator.geolocation) {
+                // Get the user's current position
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Success callback: retrieve latitude and longitude
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    // Display the user's location
+                    document.getElementById("location").innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                }, function(error) {
+                    // Error callback: if geolocation fails
+                    console.error("Geolocation error: " + error.message);
+                    document.getElementById("location").innerText = "Geolocation is not available or was denied.";
+                });
+            } else {
+                // If geolocation is not supported by the browser
+                document.getElementById("location").innerText = "Geolocation is not supported by this browser.";
+            }
+        };
+    </script>
 
     <script src="logincard/login.js"></script>
 </body>
