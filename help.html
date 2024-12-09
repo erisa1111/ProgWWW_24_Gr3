@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Drawing with Message</title>
+    <link rel="stylesheet" href="css/help.css">
 
     <style>
         body {
@@ -31,6 +32,46 @@
             margin-bottom: 30px;
         }
     </style>
+
+<script>
+    // Function to get the user's location
+    function getLocation() {
+        // Check if geolocation is available in the browser
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    // Function to show the position
+    function showPosition(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        document.getElementById("location").innerHTML = `Latitude: ${latitude} <br>Longitude: ${longitude}`;
+    }
+
+    // Function to handle errors
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                document.getElementById("location").innerHTML = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                document.getElementById("location").innerHTML = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                document.getElementById("location").innerHTML = "An unknown error occurred.";
+                break;
+        }
+    }
+    
+
+    
+</script>
 </head>
 <body>
 
@@ -165,46 +206,58 @@
     </svg>
 </div>
 
+<div class="container">
+  
+
+    <!-- CSS3 @keyframe animation -->
+    <div class="keyframe-example">
+        <h2>CSS3 Keyframe Animation</h2>
+        <div class="box animated-box">Animated Box</div>
+    </div>
+
+    <div class="container">
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+
+    <!-- Multiple Columns -->
+    <div class="multi-column-example">
+        <h2>Multi-column Layout</h2>
+        <div class="multi-column-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum.</p>
+            <p>Curabitur vehicula sem eu orci sodales, eu tincidunt velit consequat. Nullam volutpat turpis in est.</p>
+            <p>Proin aliquam felis sit amet nunc lacinia, ac aliquet felis facilisis. Nulla a orci ac erat ullamcorper.</p>
+            <p>Morbi nec diam vel metus scelerisque ullamcorper non in dui. Integer tempor metus vel venenatis.</p>
+        </div>
+    </div>
+
+    <div class="animated-container">
+        <div class="animated-box2">Moving Box</div>
+    </div>
+
+    <!-- Box Resize and Outline Offset -->
+    <div class="resize-box">
+        <h2>Box Resize and Outline Offset</h2>
+        <div class="resize-box-example" id="draggable-box">
+            Resizable Box with Outline Offset
+        </div>
+    </div>
+    
+
+    
+</div>
 
 
 
 
-<script>
-    // Function to get the user's location
-    function getLocation() {
-        // Check if geolocation is available in the browser
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
 
-    // Function to show the position
-    function showPosition(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        document.getElementById("location").innerHTML = `Latitude: ${latitude} <br>Longitude: ${longitude}`;
-    }
 
-    // Function to handle errors
-    function showError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
-                break;
-            case error.POSITION_UNAVAILABLE:
-                document.getElementById("location").innerHTML = "Location information is unavailable.";
-                break;
-            case error.TIMEOUT:
-                document.getElementById("location").innerHTML = "The request to get user location timed out.";
-                break;
-            case error.UNKNOWN_ERROR:
-                document.getElementById("location").innerHTML = "An unknown error occurred.";
-                break;
-        }
-    }
-</script>
 
 </body>
 </html>

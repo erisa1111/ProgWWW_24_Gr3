@@ -1,0 +1,233 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* RotateX and RotateY (3D Transforms) */
+.rotate-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin: 20px 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+.rotate-box:hover .box {
+    transform: rotateX(30deg) rotateY(30deg);
+}
+
+/* CSS3 Keyframe Animation */
+.keyframe-example {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.animated-box {
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #FF5733;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    animation: backgroundChange 5s infinite;
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-color: #FF5733;
+    }
+    50% {
+        background-color: #33C1FF;
+    }
+    100% {
+        background-color: #FF5733;
+    }
+}
+
+/* Multi-column Layout */
+.multi-column-example {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.multi-column-text {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.multi-column-text p {
+    margin-bottom: 10px;
+}
+
+/* Box Resize and Outline Offset */
+.resize-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.resize-box-example {
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: #F39C12;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    resize: both;
+    overflow: hidden;
+    outline: 5px solid #2C3E50;
+    outline-offset: 10px;
+    position: relative; /* Added for dragging */
+    cursor: move; /* Show drag cursor */
+}
+
+/* Box resizing behavior */
+.resize-box-example:hover {
+    background-color: #F1C40F;
+}
+
+
+/* Animated Container */
+.animated-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animated Box */
+.animated-box2 {
+    width: 200px;
+    height: 200px;
+    background-color: #FF5733;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    animation: moveAndChangeBackground 5s ease-in-out infinite;
+}
+
+
+
+/* CSS3 Animation: Changing background and position */
+@keyframes moveAndChangeBackground {
+    0% {
+        transform: translateX(0) translateY(0);
+        background-color: #FF5733; /* Initial color */
+    }
+    25% {
+        transform: translateX(100px) translateY(-50px);
+        background-color: #33C1FF; /* Color change at 25% */
+    }
+    50% {
+        transform: translateX(200px) translateY(0);
+        background-color: #FFBD33; /* Color change at 50% */
+    }
+    75% {
+        transform: translateX(100px) translateY(50px);
+        background-color: #9B59B6; /* Color change at 75% */
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+        background-color: #FF5733; /* Final color */
+    }
+}
+
+
+.container2 {
+    perspective: 1000px; /* Perspective for 3D effect */
+    width: 80%;  /* Adjust container size */
+    height: 80%; /* Adjust container size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 5s infinite linear;
+    cursor: grab;  /* Indicates the cube can be dragged */
+    user-select: none; /* Disable text selection */
+}
+
+/* Faces of the Cube */
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+}
+
+.front  { transform: translateZ(100px); background-color: #FF5733; }
+.back   { transform: rotateY(180deg) translateZ(100px); background-color: #33C1FF; }
+.left   { transform: rotateY(-90deg) translateZ(100px); background-color: #FFBD33; }
+.right  { transform: rotateY(90deg) translateZ(100px); background-color: #9B59B6; }
+.top    { transform: rotateX(90deg) translateZ(100px); background-color: #33C1FF; }
+.bottom { transform: rotateX(-90deg) translateZ(100px); background-color: #FF5733; }
+
+/* Animation for rotating the cube */
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Allow the drop area */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+  }
+  
+  #mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+  }
