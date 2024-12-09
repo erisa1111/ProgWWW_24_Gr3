@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,66 +14,41 @@
             padding: 50px;
             background-color: #f7f7f7;
         }
+
         svg {
             width: 200px;
             height: 300px;
             margin-top: 50px;
         }
+
         canvas {
             margin-top: 50px;
             border: 1px solid #ccc;
         }
+
         .field {
             margin-top: 50px;
             text-align: center;
         }
+
         h1 {
             font-size: 2rem;
             color: #333;
             margin-bottom: 30px;
         }
+
+        input,
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
     </style>
-
-<script>
-    // Function to get the user's location
-    function getLocation() {
-        // Check if geolocation is available in the browser
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    // Function to show the position
-    function showPosition(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        document.getElementById("location").innerHTML = `Latitude: ${latitude} <br>Longitude: ${longitude}`;
-    }
-
-    // Function to handle errors
-    function showError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
-                break;
-            case error.POSITION_UNAVAILABLE:
-                document.getElementById("location").innerHTML = "Location information is unavailable.";
-                break;
-            case error.TIMEOUT:
-                document.getElementById("location").innerHTML = "The request to get user location timed out.";
-                break;
-            case error.UNKNOWN_ERROR:
-                document.getElementById("location").innerHTML = "An unknown error occurred.";
-                break;
-        }
-    }
-    
-
-    
-</script>
 </head>
+
 <body>
 
     <h1>Geolocation Example</h1>
@@ -85,22 +61,22 @@
     <!-- Hangman SVG Drawing -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
         <!-- Stand -->
-        <line x1="50" y1="250" x2="50" y2="50" stroke="black" stroke-width="3"/>
-        <line x1="50" y1="50" x2="150" y2="50" stroke="black" stroke-width="3"/>
-        <line x1="150" y1="50" x2="150" y2="100" stroke="black" stroke-width="3"/>
+        <line x1="50" y1="250" x2="50" y2="50" stroke="black" stroke-width="3" />
+        <line x1="50" y1="50" x2="150" y2="50" stroke="black" stroke-width="3" />
+        <line x1="150" y1="50" x2="150" y2="100" stroke="black" stroke-width="3" />
 
         <!-- Head -->
-        <circle cx="150" cy="130" r="30" stroke="black" stroke-width="3" fill="none"/>
+        <circle cx="150" cy="130" r="30" stroke="black" stroke-width="3" fill="none" />
 
         <!-- Body -->
-        <line x1="150" y1="160" x2="150" y2="200" stroke="black" stroke-width="3"/>
+        <line x1="150" y1="160" x2="150" y2="200" stroke="black" stroke-width="3" />
 
         <!-- Arms -->
-        <line x1="120" y1="170" x2="180" y2="170" stroke="black" stroke-width="3"/>
+        <line x1="120" y1="170" x2="180" y2="170" stroke="black" stroke-width="3" />
 
         <!-- Legs -->
-        <line x1="130" y1="200" x2="120" y2="250" stroke="black" stroke-width="3"/>
-        <line x1="170" y1="200" x2="180" y2="250" stroke="black" stroke-width="3"/>
+        <line x1="130" y1="200" x2="120" y2="250" stroke="black" stroke-width="3" />
+        <line x1="170" y1="200" x2="180" y2="250" stroke="black" stroke-width="3" />
     </svg>
 
     <!-- Canvas with quote -->
@@ -116,167 +92,162 @@
         ctx.fillText("No need to suicide.", 20, 60);
     </script>
 
-<h1>There is Always Hope!</h1>
+    <h1>There is Always Hope!</h1>
 
-<!-- First Green field with flowers -->
-<div class="field">
-    <h2>There is always a way forward, no matter the situation. No need for suicide!</h2>
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
-        <!-- Green field -->
-        <rect x="0" y="100" width="500" height="100" fill="green" />
-        <!-- Flowers -->
-        <circle cx="80" cy="150" r="10" fill="yellow" />
-        <circle cx="80" cy="150" r="4" fill="red" />
-        <circle cx="150" cy="160" r="12" fill="purple" />
-        <circle cx="150" cy="160" r="4" fill="white" />
-        <circle cx="220" cy="140" r="15" fill="pink" />
-        <circle cx="220" cy="140" r="5" fill="yellow" />
-        <circle cx="300" cy="155" r="13" fill="blue" />
-        <circle cx="300" cy="155" r="5" fill="white" />
-        <circle cx="380" cy="150" r="14" fill="orange" />
-        <circle cx="380" cy="150" r="5" fill="yellow" />
-    </svg>
-</div>
+    <!-- First Green field with flowers -->
+    <div class="field">
+        <h2>There is always a way forward, no matter the situation. No need for suicide!</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+            <!-- Green field -->
+            <rect x="0" y="100" width="500" height="100" fill="green" />
+            <!-- Flowers -->
+            <circle cx="80" cy="150" r="10" fill="yellow" />
+            <circle cx="80" cy="150" r="4" fill="red" />
+            <circle cx="150" cy="160" r="12" fill="purple" />
+            <circle cx="150" cy="160" r="4" fill="white" />
+            <circle cx="220" cy="140" r="15" fill="pink" />
+            <circle cx="220" cy="140" r="5" fill="yellow" />
+            <circle cx="300" cy="155" r="13" fill="blue" />
+            <circle cx="300" cy="155" r="5" fill="white" />
+            <circle cx="380" cy="150" r="14" fill="orange" />
+            <circle cx="380" cy="150" r="5" fill="yellow" />
+        </svg>
+    </div>
 
-<!-- Second Green field with flowers -->
-<div class="field">
-    <h2>Stay Strong! Every problem has a solution!</h2>
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
-        <!-- Green field -->
-        <rect x="0" y="100" width="500" height="100" fill="green" />
-        <!-- Flowers -->
-        <circle cx="100" cy="160" r="10" fill="yellow" />
-        <circle cx="100" cy="160" r="5" fill="blue" />
-        <circle cx="170" cy="170" r="12" fill="violet" />
-        <circle cx="170" cy="170" r="6" fill="pink" />
-        <circle cx="250" cy="145" r="14" fill="red" />
-        <circle cx="250" cy="145" r="6" fill="white" />
-        <circle cx="320" cy="150" r="11" fill="pink" />
-        <circle cx="320" cy="150" r="4" fill="yellow" />
-        <circle cx="380" cy="170" r="15" fill="orange" />
-        <circle cx="380" cy="170" r="6" fill="red" />
-    </svg>
-</div>
+    <!-- Second Green field with flowers -->
+    <div class="field">
+        <h2>Stay Strong! Every problem has a solution!</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+            <!-- Green field -->
+            <rect x="0" y="100" width="500" height="100" fill="green" />
+            <!-- Flowers -->
+            <circle cx="100" cy="160" r="10" fill="yellow" />
+            <circle cx="100" cy="160" r="5" fill="blue" />
+            <circle cx="170" cy="170" r="12" fill="violet" />
+            <circle cx="170" cy="170" r="6" fill="pink" />
+            <circle cx="250" cy="145" r="14" fill="red" />
+            <circle cx="250" cy="145" r="6" fill="white" />
+            <circle cx="320" cy="150" r="11" fill="pink" />
+            <circle cx="320" cy="150" r="4" fill="yellow" />
+            <circle cx="380" cy="170" r="15" fill="orange" />
+            <circle cx="380" cy="170" r="6" fill="red" />
+        </svg>
+    </div>
 
-<div class="field">
-    <h2>There is always light at the end of the tunnel. Keep going!</h2>
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
-  
-        <rect x="0" y="100" width="500" height="100" fill="green" />
-     
-        <circle cx="60" cy="150" r="12" fill="purple" />
-        <circle cx="60" cy="150" r="4" fill="white" />
-        <circle cx="140" cy="165" r="10" fill="blue" />
-        <circle cx="140" cy="165" r="5" fill="yellow" />
-        <circle cx="210" cy="145" r="15" fill="yellow" />
-        <circle cx="210" cy="145" r="5" fill="pink" />
-        <circle cx="290" cy="160" r="13" fill="red" />
-        <circle cx="290" cy="160" r="6" fill="white" />
-        <circle cx="370" cy="150" r="14" fill="orange" />
-        <circle cx="370" cy="150" r="5" fill="purple" />
-        <circle cx="60" cy="150" r="12" fill="purple" />
-        <circle cx="60" cy="150" r="4" fill="white" />
-        <circle cx="140" cy="165" r="10" fill="blue" />
-        <circle cx="140" cy="165" r="5" fill="yellow" />
-        <circle cx="210" cy="145" r="15" fill="yellow" />
-        <circle cx="210" cy="145" r="5" fill="pink" />
-        <circle cx="290" cy="160" r="13" fill="red" />
-        <circle cx="290" cy="160" r="6" fill="white" />
-        <circle cx="370" cy="150" r="14" fill="orange" />
-        <circle cx="370" cy="150" r="5" fill="purple" />
-    </svg>
-</div>
+    <div class="field">
+        <h2>There is always light at the end of the tunnel. Keep going!</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
 
-<div class="field">
-    <h2>Never give up! You are stronger than you think.</h2>
-    <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
-       
-        <rect x="0" y="100" width="700" height="500" fill="green" />
-     
-        <circle cx="90" cy="150" r="11" fill="yellow" />
-        <circle cx="90" cy="150" r="5" fill="red" />
-        <circle cx="160" cy="155" r="13" fill="blue" />
-        <circle cx="160" cy="155" r="6" fill="white" />
-        <circle cx="240" cy="145" r="14" fill="pink" />
-        <circle cx="240" cy="145" r="6" fill="yellow" />
-        <circle cx="320" cy="160" r="12" fill="violet" />
-        <circle cx="320" cy="160" r="5" fill="orange" />
-        <circle cx="400" cy="155" r="10" fill="green" />
-        <circle cx="400" cy="155" r="5" fill="yellow" />
-    </svg>
-</div>
+            <rect x="0" y="100" width="500" height="100" fill="green" />
 
-<div class="container">
-  
+            <circle cx="60" cy="150" r="12" fill="purple" />
+            <circle cx="60" cy="150" r="4" fill="white" />
+            <circle cx="140" cy="165" r="10" fill="blue" />
+            <circle cx="140" cy="165" r="5" fill="yellow" />
+            <circle cx="210" cy="145" r="15" fill="yellow" />
+            <circle cx="210" cy="145" r="5" fill="pink" />
+            <circle cx="290" cy="160" r="13" fill="red" />
+            <circle cx="290" cy="160" r="6" fill="white" />
+            <circle cx="370" cy="150" r="14" fill="orange" />
+            <circle cx="370" cy="150" r="5" fill="purple" />
+            <circle cx="60" cy="150" r="12" fill="purple" />
+            <circle cx="60" cy="150" r="4" fill="white" />
+            <circle cx="140" cy="165" r="10" fill="blue" />
+            <circle cx="140" cy="165" r="5" fill="yellow" />
+            <circle cx="210" cy="145" r="15" fill="yellow" />
+            <circle cx="210" cy="145" r="5" fill="pink" />
+            <circle cx="290" cy="160" r="13" fill="red" />
+            <circle cx="290" cy="160" r="6" fill="white" />
+            <circle cx="370" cy="150" r="14" fill="orange" />
+            <circle cx="370" cy="150" r="5" fill="purple" />
+        </svg>
+    </div>
 
-    <!-- CSS3 @keyframe animation -->
-    <div class="keyframe-example">
-        <h2>CSS3 Keyframe Animation</h2>
-        <div class="box animated-box">Animated Box</div>
+    <div class="field">
+        <h2>Never give up! You are stronger than you think.</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="500" height="200" viewBox="0 0 500 200">
+
+            <rect x="0" y="100" width="700" height="500" fill="green" />
+
+            <circle cx="90" cy="150" r="11" fill="yellow" />
+            <circle cx="90" cy="150" r="5" fill="red" />
+            <circle cx="160" cy="155" r="13" fill="blue" />
+            <circle cx="160" cy="155" r="6" fill="white" />
+            <circle cx="240" cy="145" r="14" fill="pink" />
+            <circle cx="240" cy="145" r="6" fill="yellow" />
+            <circle cx="320" cy="160" r="12" fill="violet" />
+            <circle cx="320" cy="160" r="5" fill="orange" />
+            <circle cx="400" cy="155" r="10" fill="green" />
+            <circle cx="400" cy="155" r="5" fill="yellow" />
+        </svg>
     </div>
 
     <div class="container">
-        <div class="cube">
-            <div class="face front"></div>
-            <div class="face back"></div>
-            <div class="face left"></div>
-            <div class="face right"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
-        </div>
-    </div>
 
-    <!-- Multiple Columns -->
-    <div class="multi-column-example">
-        <h2>Multi-column Layout</h2>
-        <div class="multi-column-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum.</p>
-            <p>Curabitur vehicula sem eu orci sodales, eu tincidunt velit consequat. Nullam volutpat turpis in est.</p>
-            <p>Proin aliquam felis sit amet nunc lacinia, ac aliquet felis facilisis. Nulla a orci ac erat ullamcorper.</p>
-            <p>Morbi nec diam vel metus scelerisque ullamcorper non in dui. Integer tempor metus vel venenatis.</p>
-        </div>
-    </div>
 
-    <div class="animated-container">
-        <div class="animated-box2">Moving Box</div>
-    </div>
-
-    <!-- Box Resize and Outline Offset -->
-    <div class="resize-box">
-        <h2>Box Resize and Outline Offset</h2>
-        <div class="resize-box-example" id="draggable-box">
-            Resizable Box with Outline Offset
+        <!-- CSS3 @keyframe animation -->
+        <div class="keyframe-example">
+            <h2>CSS3 Keyframe Animation</h2>
+            <div class="box animated-box">Animated Box</div>
         </div>
+
+        <div class="container">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+        </div>
+
+        <!-- Multiple Columns -->
+        <div class="multi-column-example">
+            <h2>Multi-column Layout</h2>
+            <div class="multi-column-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum.</p>
+                <p>Curabitur vehicula sem eu orci sodales, eu tincidunt velit consequat. Nullam volutpat turpis in est.
+                </p>
+                <p>Proin aliquam felis sit amet nunc lacinia, ac aliquet felis facilisis. Nulla a orci ac erat
+                    ullamcorper.</p>
+                <p>Morbi nec diam vel metus scelerisque ullamcorper non in dui. Integer tempor metus vel venenatis.</p>
+            </div>
+        </div>
+
+        <div class="animated-container">
+            <div class="animated-box2">Moving Box</div>
+        </div>
+
+        <!-- Box Resize and Outline Offset -->
+        <div class="resize-box">
+            <h2>Box Resize and Outline Offset</h2>
+            <div class="resize-box-example" id="draggable-box">
+                Resizable Box with Outline Offset
+            </div>
+        </div>
+
+
+
     </div>
+    <h1>Number Array Operations</h1>
+
+    <!-- Input field for entering numbers -->
+    <input type="number" id="numInput" placeholder="Enter a number">
+
+    <!-- Buttons -->
+    <button id="addBtn">Add</button>
+    <button id="showBtn">Show All</button>
+    <button id="maxBtn">Show Max</button>
+    <button id="minBtn">Show Min</button>
+    <button id="toExponentialBtn">To Exponential</button>
+        <button id="checkNaNBtn">Check NaN</button>
+        <button id="convertToStringBtn">To String</button>
+        <button id="matchReplaceBtn">Match & Replace</button>
+        <button id="showDateBtn">Show Date</button>
+
+    <div id="result"></div>
     
-
-    
-</div>
-
-
-
-
-
-
-
-</body>
-</html>
-
-<!--
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geolocation Example</title>
-</head>
-<body>
-
-    <h1>Geolocation Example</h1>
-    <button onclick="getLocation()">Get My Location</button>
-    <p id="location"></p>
-
     <script>
         // Function to get the user's location
         function getLocation() {
@@ -312,9 +283,125 @@
                     break;
             }
         }
-    </script>
+        let numberArray = [];
+
+
+document.getElementById("addBtn").addEventListener("click", function () {
+    const numInput = document.getElementById("numInput").value.trim();
+
+    // Check if the input is a valid number
+    if (!isNaN(numInput) && numInput !== "") {
+        numberArray.push(Number(numInput)); 
+        document.getElementById("numInput").value = ""; 
+        displayMessage(`Number ${numInput} added to the list.`);
+    } else {
+        displayMessage("Please enter a valid number.", true);
+    }
+});
+
+// Show All 
+document.getElementById("showBtn").addEventListener("click", function () {
+    if (numberArray.length > 0) {
+        displayMessage("All numbers: " + numberArray.join(", "));
+    } else {
+        displayMessage("No numbers added yet.", true);
+    }
+});
+
+// Show Max 
+document.getElementById("maxBtn").addEventListener("click", function () {
+    if (numberArray.length > 0) {
+        let maxValue = Math.max(...numberArray);
+        displayMessage("Maximum value: " + maxValue);
+    } else {
+        displayMessage("No numbers added yet.", true);
+    }
+});
+
+// Show Min 
+document.getElementById("minBtn").addEventListener("click", function () {
+    if (numberArray.length > 0) {
+        let minValue = Math.min(...numberArray);
+        displayMessage("Minimum value: " + minValue);
+    } else {
+        displayMessage("No numbers added yet.", true);
+    }
+});
+
+document.getElementById("toExponentialBtn").addEventListener("click", function () {
+    const numInput = document.getElementById("numInput").value.trim();
+    const number = Number(numInput);
+    if (!isNaN(number)) {
+        const expNumber = number.toExponential(2); 
+        displayMessage(`${number} in exponential form: ${expNumber}`);
+    } else {
+        displayMessage("Please enter a valid number.", true);
+    }
+});
+
+
+document.getElementById("checkNaNBtn").addEventListener("click", function () {
+    const numInput = document.getElementById("numInput").value.trim();
+    const isNotNumber = isNaN(numInput);
+    if (isNotNumber) {
+        displayMessage("Input is NaN (Not a Number).", true);
+    } else {
+        displayMessage("Input is a valid number.");
+    }
+});
+
+
+document.getElementById("convertToStringBtn").addEventListener("click", function () {
+    const numInput = document.getElementById("numInput").value.trim();
+    const number = Number(numInput);
+    if (!isNaN(number)) {
+        const numString = number.toString();
+        displayMessage(`The number as a string: ${numString}`);
+    } else {
+        displayMessage("Please enter a valid number.", true);
+    }
+});
+
+// Match & Replace button event listener
+document.getElementById("matchReplaceBtn").addEventListener("click", function () {
+    const inputString = document.getElementById("numInput").value.trim();
+    const regex = /[0-9]/g; // Find all digits
+    const matches = inputString.match(regex); // Match digits in the string
+    const replacedString = inputString.replace(/[aeiouAEIOU]/g, "*"); // Replace vowels with *
+    if (matches) {
+        displayMessage(`Matches (digits found): ${matches.join(", ")}`);
+        displayMessage(`Replaced string: ${replacedString}`);
+    } else {
+        displayMessage("No digits found to match.");
+    }
+});
+
+// Show Date button event listener
+document.getElementById("showDateBtn").addEventListener("click", function () {
+    const currentDate = new Date();
+    displayMessage(`Current date and time: ${currentDate.toString()}`);
+});
+
+// Helper function to display messages
+function displayMessage(message, isError = false) {
+    const resultDiv = document.getElementById("result");
+    resultDiv.style.color = isError ? "red" : "black";
+    resultDiv.textContent = message;
+}
+
+// Example of RegEx test and exec usage
+function regexTestExecExample() {
+    const testString = "Hello World! 123";
+    const regex = /\d+/g; // Match one or more digits
+    const testResult = regex.test(testString); // Test if there are digits in the string
+    const execResult = regex.exec(testString); // Extract the first match (digits)
+    displayMessage(`RegEx test result: ${testResult}`);
+    displayMessage(`RegEx exec result: ${execResult}`);
+}
+
+// Run the example on page load
+regexTestExecExample();
+</script>
 
 </body>
 </html>
-
--->
