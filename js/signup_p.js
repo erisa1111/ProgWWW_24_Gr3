@@ -1,4 +1,4 @@
-// Validate Name
+
 function validateName(name) {
     if (name === "") {
         return "Name is required.";
@@ -6,7 +6,7 @@ function validateName(name) {
     return null;
 }
 
-// Validate Surname
+
 function validateSurname(surname) {
     if (surname === "") {
         return "Surname is required.";
@@ -14,7 +14,7 @@ function validateSurname(surname) {
     return null;
 }
 
-// Validate Location
+
 function validateLocation(location) {
     if (location === "") {
         return "Location is required.";
@@ -22,7 +22,7 @@ function validateLocation(location) {
     return null;
 }
 
-// Validate Gender
+
 function validateGender(gender) {
     if (gender === "") {
         return "Gender is required.";
@@ -30,7 +30,7 @@ function validateGender(gender) {
     return null;
 }
 
-// Validate Number of Kids
+
 function validateNumKids(numKids) {
     if (numKids === "" || isNaN(numKids) || numKids < 0) {
         return "Number of kids must be a valid number (0 or more).";
@@ -38,7 +38,7 @@ function validateNumKids(numKids) {
     return null;
 }
 
-// Validate Email
+
 function validateEmail(email) {
     if (email === "") {
         return "Email is required.";
@@ -48,7 +48,7 @@ function validateEmail(email) {
     return null;
 }
 
-// Validate Username
+
 function validateUsername(username) {
     if (username === "") {
         return "Username is required.";
@@ -56,7 +56,7 @@ function validateUsername(username) {
     return null;
 }
 
-// Validate Password
+
 function validatePassword(password) {
     if (password === "") {
         return "Password is required.";
@@ -67,7 +67,6 @@ function validatePassword(password) {
 }
 
 document.getElementById("signUpParentForm").addEventListener("submit", function (event) {
-    // Get all input fields
     const name = document.getElementById("name").value.trim();
     const surname = document.getElementById("surname").value.trim();
     const location = document.getElementById("location").value.trim();
@@ -77,7 +76,6 @@ document.getElementById("signUpParentForm").addEventListener("submit", function 
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    // Get error message elements
     const nameError = document.getElementById("nameError");
     const surnameError = document.getElementById("surnameError");
     const locationError = document.getElementById("locationError");
@@ -87,7 +85,6 @@ document.getElementById("signUpParentForm").addEventListener("submit", function 
     const usernameError = document.getElementById("usernameError");
     const passwordError = document.getElementById("passwordError");
 
-    // Clear previous error messages
     [nameError, surnameError, locationError, genderError, numKidsError, emailError, usernameError, passwordError].forEach(err => {
         err.textContent = "";
         err.style.display = "none";
@@ -95,7 +92,6 @@ document.getElementById("signUpParentForm").addEventListener("submit", function 
 
     let isValid = true;
 
-    // Validate personal details
     const nameErrorMsg = validateName(name);
     if (nameErrorMsg) {
         nameError.textContent = nameErrorMsg;
@@ -131,7 +127,6 @@ document.getElementById("signUpParentForm").addEventListener("submit", function 
         isValid = false;
     }
 
-    // Validate account details
     const emailErrorMsg = validateEmail(email);
     if (emailErrorMsg) {
         emailError.textContent = emailErrorMsg;
@@ -153,7 +148,6 @@ document.getElementById("signUpParentForm").addEventListener("submit", function 
         isValid = false;
     }
 
-    // Prevent form submission if validation fails
     if (!isValid) {
         event.preventDefault();
     }
