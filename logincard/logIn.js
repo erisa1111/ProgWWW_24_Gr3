@@ -4,7 +4,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const usernameError = document.getElementById("usernameError");
     const passwordError = document.getElementById("passwordError");
 
-    // Clear previous error messages
     usernameError.style.display = "none";
     usernameError.textContent = "";
     passwordError.style.display = "none";
@@ -12,14 +11,12 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
     let isValid = true;
 
-    // Validate username
     if (username === "") {
         usernameError.style.display = "block";
         usernameError.textContent = "Username is required.";
         isValid = false;
     }
 
-    // Validate password
     if (password === "") {
         passwordError.style.display = "block";
         passwordError.textContent = "Password is required.";
@@ -30,7 +27,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         isValid = false;
     }
 
-    // Prevent form submission if validation fails
     if (!isValid) {
         event.preventDefault();
     }
