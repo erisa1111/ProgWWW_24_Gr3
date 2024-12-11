@@ -136,8 +136,8 @@
       position: relative;
       /* Multiple background images */
       background-image: 
-        url('https://via.placeholder.com/200x200?text=Background+1'),
-        url('https://via.placeholder.com/200x200?text=Background+2');
+        url('/img/Cute-Room.jpg'),
+        url('/img/another_room1.png');
       background-repeat: no-repeat, repeat; 
       background-position: top left, bottom right; 
       background-size: 150px 150px, 100px 100px; 
@@ -183,6 +183,86 @@
       font-weight: bold;
       text-shadow: 1px 1px 2px black;
     }
+    
+    .background-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/img/Cute-Room.jpg'); 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center center; 
+    background-size: cover; 
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.background-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.background-container p {
+    font-size: 1.2em;
+}
+
+.text-container1 {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Applying text shadow */
+.text-container1 h1 {
+    font-size: 3em;
+    color: #333;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* Horizontal, Vertical, Blur Radius, and Color */
+}
+
+/* Text wrapping example */
+.text-container1 p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    word-wrap: break-word; /* Ensures text breaks and wraps properly */
+    white-space: normal;  /* Ensures normal text wrapping behavior */
+}
+
+.container50 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Draggable element */
+.draggable50 {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+/* CSS for dragging effect */
+.draggable50:active {
+    transform: translate(100px, 100px); /* Moves the element when clicked and dragged */
+}
+
+
     </style>
 </head>
 
@@ -502,6 +582,113 @@
     <p>Radial Gradient</p>
   </div>
 
+  <div class="background-container">
+    <h1>Background Example</h1>
+    <p>This demonstrates background-repeat, background-attachment, and background-position.</p>
+</div>
+
+<div class="text-container1">
+    <h1>This is a text with shadow</h1>
+    <p>This is a paragraph demonstrating text wrapping. The text will automatically wrap to the next line if it exceeds the width of the container.</p>
+</div>
+
+<div class="container50">
+    <div class="draggable50" tabindex="0">
+        Drag me!
+    </div>
+</div>
+
+<form action="#">
+    <!-- Datalist Example -->
+    <label for="fruit">Choose a fruit:</label>
+    <input list="fruits" id="fruit" name="fruit">
+    <datalist id="fruits">
+        <option value="Apple">
+        <option value="Banana">
+        <option value="Cherry">
+        <option value="Date">
+        <option value="Grapes">
+    </datalist>
+    <br><br>
+
+    <!-- Keygen Example (Note: deprecated in many browsers) -->
+    <label for="keygen">Generate Key (Deprecated):</label>
+    <keygen id="keygen" name="keygen" />
+    <br><br>
+
+    <!-- Output Example -->
+    <label for="number1">Enter a number:</label>
+    <input type="number" id="number1" name="number1">
+    <br><br>
+    
+    <label for="number2">Enter another number:</label>
+    <input type="number" id="number2" name="number2">
+    <br><br>
+
+    <label for="sum">Sum (static):</label>
+    <output id="sum" for="number1 number2">Static Output</output>
+    <br><br>
+    
+    <input type="submit" value="Submit">
+</form>
+
+<br>
+<h1>HTML5 Input Attributes Example</h1>
+
+<form action="#" method="post">
+
+    <!-- 1. autocomplete: Enables or disables autocomplete in the input field -->
+    <label for="name">Name (autocomplete enabled):</label>
+    <input type="text" id="name" name="name" autocomplete="on" placeholder="Enter your name">
+    <br><br>
+
+    <!-- 2. autocomplete: Disabling autocomplete for the input field -->
+    <label for="email">Email (autocomplete disabled):</label>
+    <input type="email" id="email" name="email" autocomplete="off" placeholder="Enter your email">
+    <br><br>
+
+    <!-- 3. form: Associates the input field with a specific form -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" form="myform" placeholder="Enter your age">
+    <br><br>
+
+    <!-- 4. list: Links input to a datalist -->
+    <label for="fruit">Choose a fruit:</label>
+    <input list="fruits" id="fruit" name="fruit">
+    <datalist id="fruits">
+        <option value="Apple">
+        <option value="Banana">
+        <option value="Cherry">
+        <option value="Date">
+        <option value="Grapes">
+    </datalist>
+    <br><br>
+
+    <!-- 5. pattern: Specifies a regular expression to validate the input -->
+    <label for="phone">Phone (pattern validation):</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+    <br><br>
+
+    <!-- 6. required: Makes the input field mandatory -->
+    <label for="address">Address (required):</label>
+    <input type="text" id="address" name="address" required placeholder="Enter your address">
+    <br><br>
+
+    <!-- 7. maxlength: Limits the number of characters -->
+    <label for="username">Username (max length 10 characters):</label>
+    <input type="text" id="username" name="username" maxlength="10" placeholder="Enter your username">
+    <br><br>
+
+    <!-- 8. min and max: Specifies minimum and maximum values for a number input -->
+    <label for="quantity">Quantity (min 1, max 10):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="Enter quantity">
+    <br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Submit">
+</form>
+
+<h1>Creating and Using Objects in JavaScript</h1>
 
 
     <script>
@@ -719,6 +906,180 @@
         }
       });
     });
+
+    const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        // 2. Accessing object properties using dot notation
+        document.write("Full Name (using dot notation): " + person.fullName() + "<br>");
+
+        // 3. Accessing object properties using bracket notation
+        document.write("First Name (using bracket notation): " + person["firstName"] + "<br>");
+
+        // 4. Adding new properties to an object
+        person.job = "Software Developer";
+        document.write("Job: " + person.job + "<br>");
+
+        // 5. Modifying an existing property
+        person.age = 31;
+        document.write("Updated Age: " + person.age + "<br>");
+
+        // 6. Using objects as parameters in a function
+        function greet(personObject) {
+            return "Hello, " + personObject.fullName() + "!";
+        }
+        document.write(greet(person) + "<br>");
+
+    
+        const h1Element = document.createElement("h1");
+        const h1ElementBook = document.createElement("h1");
+        const h1ElementCar = document.createElement("h1");
+
+
+        h1Element.textContent = "Using Constructor Functions to Create Student Objects";
+        document.body.appendChild(h1Element);
+        const student = {
+            name: "Alice",
+            grade: "A",
+            address: {
+                street: "123 Main St",
+                city: "New York",
+                zipCode: "10001"
+            }
+        };
+
+        document.write("Student's Address: " + student.address.street + ", " + student.address.city + "<br>");
+
+        // 8. Using Object.keys() to get an array of keys
+        document.write("Keys of 'person' object: " + Object.keys(person).join(", ") + "<br>");
+
+        // 9. Using Object.values() to get an array of values
+        document.write("Values of 'person' object: " + Object.values(person).join(", ") + "<br>");
+
+        function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.fullName = function() {
+                return this.firstName + " " + this.lastName;
+            };
+        }
+
+        
+        const person1 = new Person("John", "Doe", 30);
+        const person2 = new Person("Alice", "Smith", 25);
+        const person3 = new Person("Bob", "Johnson", 35);
+
+ 
+        document.write("Person 1: " + person1.fullName() + ", Age: " + person1.age + "<br>");
+        document.write("Person 2: " + person2.fullName() + ", Age: " + person2.age + "<br>");
+        document.write("Person 3: " + person3.fullName() + ", Age: " + person3.age + "<br>");
+
+
+        h1ElementBook.textContent = "Using Constructor Functions to Create Book Objects";
+        document.body.appendChild(h1ElementBook);
+        function Book(title, author, genre) {
+            this.title = title;
+            this.author = author;
+            this.genre = genre;
+            this.getBookInfo = function() {
+                return '"' + this.title + '" by ' + this.author + ' (Genre: ' + this.genre + ')';
+            };
+        }
+
+        // Creating instances of the Book object
+        const book1 = new Book("1984", "George Orwell", "Dystopian");
+        const book2 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction");
+        const book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "Classic");
+
+        // Displaying the properties of the instances
+        document.write("Book 1: " + book1.getBookInfo() + "<br>");
+        document.write("Book 2: " + book2.getBookInfo() + "<br>");
+        document.write("Book 3: " + book3.getBookInfo() + "<br>");
+
+        h1ElementCar.textContent = "Using Constructor Functions to Create Car Objects";
+        document.body.appendChild(h1ElementCar);
+        function Car(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.getCarInfo = function() {
+                return this.year + " " + this.make + " " + this.model;
+            };
+        }
+
+        // Creating instances of the Car object
+        const car1 = new Car("Toyota", "Camry", 2020);
+        const car2 = new Car("Ford", "Mustang", 2021);
+        const car3 = new Car("Tesla", "Model 3", 2023);
+
+        // Displaying the properties of the instances
+        document.write("Car 1: " + car1.getCarInfo() + "<br>");
+        document.write("Car 2: " + car2.getCarInfo() + "<br>");
+        document.write("Car 3: " + car3.getCarInfo() + "<br>");
+
+          // 1. MAX_VALUE
+          const maxValue = Number.MAX_VALUE;
+        document.write("<h2>1. MAX_VALUE:</h2>");
+        document.write("The largest number in JavaScript: " + maxValue + "<br><br>");
+
+        // 2. NaN (Not-a-Number)
+        const notANumber = "Hello" / 2; // This results in NaN
+        document.write("<h2>2. NaN:</h2>");
+        document.write("Result of an invalid operation: " + notANumber + "<br>");
+        document.write("Is it NaN? " + isNaN(notANumber) + "<br><br>");
+
+        // 3. toExponential() - Represents the number in exponential (scientific) notation
+        const number = 12345.6789;
+        const exponentialForm = number.toExponential(2); // 2 decimal places in scientific notation
+        document.write("<h2>3. toExponential() :</h2>");
+        document.write("Number in exponential form (2 decimals): " + exponentialForm + "<br><br>");
+
+        // 4. toString() - Converts the number to a string
+        const numberString = number.toString();
+        document.write("<h2>4. toString() :</h2>");
+        document.write("Number as a string: " + numberString + "<br><br>");
+
+        // Additional example: toFixed() - Rounds the number to a specified decimal place
+        const roundedNumber = number.toFixed(2); // Round to 2 decimal places
+        document.write("<h2>5. toFixed() :</h2>");
+        document.write("Number rounded to 2 decimal places: " + roundedNumber + "<br>");
+           // Example 1: Using match() - Extracting patterns from a string
+
+           const text = "The quick brown fox jumps over the lazy dog.";
+        
+        // Find all words that start with the letter 't' (case-insensitive)
+        const wordsWithT = text.match(/\bt\w*/gi);  // \b for word boundary, \w* for word characters, gi for global and case-insensitive search
+        document.write("<h2>1. Using match()</h2>");
+        document.write("Words that start with 't': " + wordsWithT.join(", ") + "<br><br>");
+
+        // Example 2: Using replace() - Replacing text in a string
+        
+        const newText = text.replace("lazy", "active"); // Replace 'lazy' with 'active'
+        document.write("<h2>2. Using replace()</h2>");
+        document.write("Original text: " + text + "<br>");
+        document.write("Modified text: " + newText + "<br><br>");
+        
+        // Example 3: Using replace() with a regular expression for all occurrences
+        const replaceAllText = text.replace(/the/gi, "a"); // Replace all occurrences of 'the' with 'a' (case-insensitive)
+        document.write("<h2>3. Replace all occurrences</h2>");
+        document.write("Text after replacing all 'the' with 'a': " + replaceAllText + "<br><br>");
+
+        // Example 4: Using match() to find all numbers in a string
+        const stringWithNumbers = "There are 12 apples and 34 oranges in the basket.";
+        const numbers = stringWithNumbers.match(/\d+/g); // \d+ for finding digits (numbers)
+        document.write("<h2>4. Using match() for numbers</h2>");
+        document.write("Numbers in the string: " + numbers.join(", ") + "<br>");
+
+
+
+        
     </script>
 
 </body>
