@@ -690,6 +690,17 @@
 
 <h1>Creating and Using Objects in JavaScript</h1>
 
+<h1>Web Workers Example</h1>
+
+
+<div>
+    <label id="numberLabel" for="number">Enter a number to calculate its factorial:</label>
+    <input type="number" id="number" value="5">
+    <button id="start">Start Calculation</button>
+</div>
+
+<div id="result"></div>
+
 
     <script>
         // Function to get the user's location
@@ -1155,6 +1166,57 @@
         const absoluteValue = Math.abs(negativeNumber);
         document.write("<h2>5. Using Math.abs():</h2>");
         document.write("The absolute value of " + negativeNumber + " is: " + absoluteValue + "<br><br>");
+
+        document.getElementById('start').addEventListener('click', function() {
+            const number = parseInt(document.getElementById('number').value);
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Calculating...';
+
+            // Web Worker code (created using a Blob)
+            const workerCode = `
+                self.onmessage = function(event) {
+                    const number = event.data;
+
+                    // Function to calculate factorial
+                    function factorial(n) {
+                        if (n <= 1) {
+                            return 1;
+                        }
+                        return n * factorial(n - 1);
+                    }
+
+                    // Calculate factorial and send result back to the main thread
+                    const result = factorial(number);
+                    self.postMessage(result);
+                };
+            `;
+
+            // Create a Blob object from the worker code
+            const blob = new Blob([workerCode], { type: 'application/javascript' });
+
+            // Create a URL for the Blob
+            const workerBlobURL = URL.createObjectURL(blob);
+
+            // Create a new Web Worker using the Blob URL
+            const worker = new Worker(workerBlobURL);
+
+            // Send the number to the worker
+            worker.postMessage(number);
+
+            // Listen for messages from the worker
+            worker.onmessage = function(event) {
+                const result = event.data;
+                resultDiv.innerHTML = 'Factorial: ' + result;
+            };
+
+            // Handle errors from the worker
+            worker.onerror = function(error) {
+                resultDiv.innerHTML = 'Error: ' + error.message;
+            };
+        });
+
+
+        
 
 
 
