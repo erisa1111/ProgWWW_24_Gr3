@@ -49,7 +49,7 @@ const handleComment = (post, postElement) => {
 
         const commentProfileImg = document.createElement("img");
         commentProfileImg.classList.add("comment-profile-img");
-        commentProfileImg.src = "../img/profile.jpg"; 
+        commentProfileImg.src = "img/profile.jpg"; 
         commentProfileImg.alt = "User Profile";
         
         const commentContent = document.createElement("div");
@@ -119,21 +119,21 @@ const initializeComments = (postElement) => {
 
 const posts = [
     {
-        profileImg:"../img/dado_profile.webp",
+        profileImg:"img/dado_profile.webp",
         username: "BabySitter1",
         location: "1d · Prishtine, Kosove",
         content: "Hi! I’m [Your Name], an experienced and caring nanny with [X] years of experience in childcare. I’m passionate about providing a safe, nurturing, and fun environment for children. I enjoy engaging kids in creative activities, helping with homework, and ensuring they feel loved and supported. I’m available for [full-time/part-time] work and can provide references upon request. Looking forward to helping your family!",
-        images:["../img/Cute-Room.jpg", "../img/another_room1.png"],
+        images:["img/Cute-Room.jpg", "img/another_room1.png"],
         likes: 125,
         comments: 10,
         isLiked: false,
     },
     {
-        profileImg:"../img/profile.jpg",
+        profileImg:"img/profile.jpg",
         username: "BabySitter2",
         location: "2d · Gjilan, Kosove",
         content: "Looking for experienced babysitters!",
-        images: ["../img/recieve.png"],
+        images: ["img/recieve.png"],
         likes: 200,
         comments: 15,
         isLiked: false,
