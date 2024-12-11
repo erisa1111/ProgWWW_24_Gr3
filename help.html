@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Drawing with Message</title>
     <link rel="stylesheet" href="css/help.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <style>
         body {
@@ -46,6 +47,142 @@
         #result {
             margin-top: 10px;
         }
+       
+    .add-text::before {
+      content: "Prepended text - ";
+      color: green;
+      font-weight: bold;
+    }
+
+  
+    .add-text::after {
+      content: " - Appended text";
+      color: red;
+      font-style: italic;
+    }
+    .outline {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      outline: 2px solid red; /* Outline i thjeshtë */
+    }
+
+    figure {
+      display: inline-block; /* Align figure elements horizontally */
+      margin: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 300px;
+    }
+
+    /* Styling for the image */
+    figure img {
+      max-width: 100%; /* Ensure image fits inside the figure */
+      height: auto;
+      display: block;
+    }
+
+    /* Styling for the caption */
+    figcaption {
+      background-color: #f8f8f8;
+      color: #555;
+      padding: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .box30 {
+      width: 300px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #333;
+      position: relative;
+    }
+
+    /* Example 1: Background-size */
+    .background-size {
+      background-image: url('https://via.placeholder.com/600x400');
+      background-size: cover; /* Options: cover, contain, auto */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Example 2: Background-origin */
+    .background-origin {
+      background-image: url('https://via.placeholder.com/600x400');
+      background-size: cover;
+      background-origin: content-box; /* Options: padding-box, border-box, content-box */
+      padding: 20px;
+      border: 10px solid #ff8800;
+      background-repeat: no-repeat;
+    }
+
+    /* Example 3: Background properties combined */
+    .background-properties {
+      background-image: url('https://via.placeholder.com/600x400');
+      background-size: 50% 50%; /* Custom size: width height */
+      background-origin: border-box;
+      background-position: top left; /* Positioning */
+      background-repeat: repeat-x; /* Repeat along X-axis */
+      border: 15px solid #007bff;
+      padding: 20px;
+    }
+
+    .box40 {
+      width: 400px;
+      height: 300px;
+      margin: 20px auto;
+      border: 2px solid #333;
+      position: relative;
+      /* Multiple background images */
+      background-image: 
+        url('https://via.placeholder.com/200x200?text=Background+1'),
+        url('https://via.placeholder.com/200x200?text=Background+2');
+      background-repeat: no-repeat, repeat; 
+      background-position: top left, bottom right; 
+      background-size: 150px 150px, 100px 100px; 
+      background-origin: padding-box, content-box; 
+    }
+
+    .linear-gradient {
+      width: 400px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #333;
+      background: linear-gradient(
+        45deg, 
+        #ff7f50, 
+        #ff6347, 
+        #ffd700 
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    /* Radial Gradient Example */
+    .radial-gradient {
+      width: 400px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #333;
+    
+      background: radial-gradient(
+        circle, 
+        #87ceeb, 
+        #4682b4, 
+        #00008b 
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+    }
     </style>
 </head>
 
@@ -241,13 +378,132 @@
     <button id="maxBtn">Show Max</button>
     <button id="minBtn">Show Min</button>
     <button id="toExponentialBtn">To Exponential</button>
-        <button id="checkNaNBtn">Check NaN</button>
-        <button id="convertToStringBtn">To String</button>
-        <button id="matchReplaceBtn">Match & Replace</button>
-        <button id="showDateBtn">Show Date</button>
+    <button id="checkNaNBtn">Check NaN</button>
+    <button id="convertToStringBtn">To String</button>
+    <button id="matchReplaceBtn">Match & Replace</button>
+    <button id="showDateBtn">Show Date</button>
 
     <div id="result"></div>
     
+    <p style="background-color: yellow;">This is a highlighted text</p>
+
+    <p>CSS adding text</p>
+
+    <p class="add-text">This is the original text.</p>
+
+    <br><br><br>
+
+    <button id="fade-btn">Fade</button>
+    <button id="slide-btn">Slide</button>
+    <button id="animate-btn">Animate</button>
+    <div id="box" style="width:100px; height:100px; background:blue;"></div>
+
+    <br><br><br>
+
+
+    <button id="callback-btn">Start Animation</button>
+    <div id="animate-box" style="width:100px; height:100px; background:green;"></div>
+    <br><br><br>
+
+    <button id="click-btn">Click Me</button>
+    <p id="hover-text" style="text-decoration: underline;">Hover over me!</p>
+
+
+    <br><br><br><br>
+
+    <h2>Radio Buttons Example</h2>
+  <form align="center">
+    <label>
+      <input type="radio" name="gender" value="male"> Male
+    </label>
+    <label>
+      <input type="radio" name="gender" value="female"> Female
+    </label>
+    <label>
+      <input type="radio" name="gender" value="other"> Other
+    </label>
+  </form>
+  <button id="get-selected-radio">Show Selected Gender</button>
+  <p id="radio-result"></p>
+
+  <h2>Checkboxes Example</h2>
+  <form>
+    <label>
+      <input type="checkbox" name="hobby" value="Reading"> Reading
+    </label>
+    <label>
+      <input type="checkbox" name="hobby" value="Traveling"> Traveling
+    </label>
+    <label>
+      <input type="checkbox" name="hobby" value="Gaming"> Gaming
+    </label>
+  </form>
+  <button id="get-selected-checkboxes">Show Selected Hobbies</button>
+  <p id="checkbox-result"></p>
+
+  <br><br><br><br>
+  <h1>Forma për Komunikim</h1>
+  <form action="mailto:emaili_juaj@example.com" method="POST" enctype="text/plain">
+    <label for="name">Emri juaj:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email-i juaj:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Mesazhi:</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <button type="submit">Dërgo</button>
+  </form>
+
+  <br><br><br><br><br>
+  <h1>Përdorimi i CSS Outline</h1>
+  <div class="outline">Element me Outline</div>
+  <br><br><br>
+
+  <h1>Using HTML Figure and Figcaption</h1>
+
+  <figure>
+    <img src="https://via.placeholder.com/300x200" alt="A placeholder image">
+    <figcaption>Image of a Placeholder (300x200)</figcaption>
+  </figure>
+
+  <br><br><br>
+  <h1>Përdorimi i Vetive të Background në CSS</h1>
+
+  <div class="box30 background-size">
+    <p><strong>Background-size:</strong> "cover"</p>
+  </div>
+
+  <div class="box30 background-origin">
+    <p><strong>Background-origin:</strong> "content-box"</p>
+  </div>
+
+  <div class="box30 background-properties">
+    <p><strong>Kombinim i vetive:</strong> Background-size, origin, dhe të tjera</p>
+  </div>
+
+  <br><br><br>
+  <h1>Përdorimi i Multiple Background Images</h1>
+
+  <div class="box40">
+    <p><strong>Kjo kuti ka dy imazhe si sfond!</strong></p>
+  </div>
+<br><br><br>
+  <h1>Përdorimi i Gradientëve në CSS</h1>
+
+  <!-- Linear Gradient -->
+  <div class="linear-gradient">
+    <p>Linear Gradient</p>
+  </div>
+
+  <!-- Radial Gradient -->
+  <div class="radial-gradient">
+    <p>Radial Gradient</p>
+  </div>
+
+
+
     <script>
         // Function to get the user's location
         function getLocation() {
@@ -286,122 +542,185 @@
         let numberArray = [];
 
 
-document.getElementById("addBtn").addEventListener("click", function () {
-    const numInput = document.getElementById("numInput").value.trim();
+        document.getElementById("addBtn").addEventListener("click", function () {
+            const numInput = document.getElementById("numInput").value.trim();
 
-    // Check if the input is a valid number
-    if (!isNaN(numInput) && numInput !== "") {
-        numberArray.push(Number(numInput)); 
-        document.getElementById("numInput").value = ""; 
-        displayMessage(`Number ${numInput} added to the list.`);
-    } else {
-        displayMessage("Please enter a valid number.", true);
-    }
-});
+            // Check if the input is a valid number
+            if (!isNaN(numInput) && numInput !== "") {
+                numberArray.push(Number(numInput));
+                document.getElementById("numInput").value = "";
+                displayMessage(`Number ${numInput} added to the list.`);
+            } else {
+                displayMessage("Please enter a valid number.", true);
+            }
+        });
 
-// Show All 
-document.getElementById("showBtn").addEventListener("click", function () {
-    if (numberArray.length > 0) {
-        displayMessage("All numbers: " + numberArray.join(", "));
-    } else {
-        displayMessage("No numbers added yet.", true);
-    }
-});
+        // Show All 
+        document.getElementById("showBtn").addEventListener("click", function () {
+            if (numberArray.length > 0) {
+                displayMessage("All numbers: " + numberArray.join(", "));
+            } else {
+                displayMessage("No numbers added yet.", true);
+            }
+        });
 
-// Show Max 
-document.getElementById("maxBtn").addEventListener("click", function () {
-    if (numberArray.length > 0) {
-        let maxValue = Math.max(...numberArray);
-        displayMessage("Maximum value: " + maxValue);
-    } else {
-        displayMessage("No numbers added yet.", true);
-    }
-});
+        // Show Max 
+        document.getElementById("maxBtn").addEventListener("click", function () {
+            if (numberArray.length > 0) {
+                let maxValue = Math.max(...numberArray);
+                displayMessage("Maximum value: " + maxValue);
+            } else {
+                displayMessage("No numbers added yet.", true);
+            }
+        });
 
-// Show Min 
-document.getElementById("minBtn").addEventListener("click", function () {
-    if (numberArray.length > 0) {
-        let minValue = Math.min(...numberArray);
-        displayMessage("Minimum value: " + minValue);
-    } else {
-        displayMessage("No numbers added yet.", true);
-    }
-});
+        // Show Min 
+        document.getElementById("minBtn").addEventListener("click", function () {
+            if (numberArray.length > 0) {
+                let minValue = Math.min(...numberArray);
+                displayMessage("Minimum value: " + minValue);
+            } else {
+                displayMessage("No numbers added yet.", true);
+            }
+        });
 
-document.getElementById("toExponentialBtn").addEventListener("click", function () {
-    const numInput = document.getElementById("numInput").value.trim();
-    const number = Number(numInput);
-    if (!isNaN(number)) {
-        const expNumber = number.toExponential(2); 
-        displayMessage(`${number} in exponential form: ${expNumber}`);
-    } else {
-        displayMessage("Please enter a valid number.", true);
-    }
-});
-
-
-document.getElementById("checkNaNBtn").addEventListener("click", function () {
-    const numInput = document.getElementById("numInput").value.trim();
-    const isNotNumber = isNaN(numInput);
-    if (isNotNumber) {
-        displayMessage("Input is NaN (Not a Number).", true);
-    } else {
-        displayMessage("Input is a valid number.");
-    }
-});
+        document.getElementById("toExponentialBtn").addEventListener("click", function () {
+            const numInput = document.getElementById("numInput").value.trim();
+            const number = Number(numInput);
+            if (!isNaN(number)) {
+                const expNumber = number.toExponential(2);
+                displayMessage(`${number} in exponential form: ${expNumber}`);
+            } else {
+                displayMessage("Please enter a valid number.", true);
+            }
+        });
 
 
-document.getElementById("convertToStringBtn").addEventListener("click", function () {
-    const numInput = document.getElementById("numInput").value.trim();
-    const number = Number(numInput);
-    if (!isNaN(number)) {
-        const numString = number.toString();
-        displayMessage(`The number as a string: ${numString}`);
-    } else {
-        displayMessage("Please enter a valid number.", true);
-    }
-});
+        document.getElementById("checkNaNBtn").addEventListener("click", function () {
+            const numInput = document.getElementById("numInput").value.trim();
+            const isNotNumber = isNaN(numInput);
+            if (isNotNumber) {
+                displayMessage("Input is NaN (Not a Number).", true);
+            } else {
+                displayMessage("Input is a valid number.");
+            }
+        });
 
-// Match & Replace button event listener
-document.getElementById("matchReplaceBtn").addEventListener("click", function () {
-    const inputString = document.getElementById("numInput").value.trim();
-    const regex = /[0-9]/g; // Find all digits
-    const matches = inputString.match(regex); // Match digits in the string
-    const replacedString = inputString.replace(/[aeiouAEIOU]/g, "*"); // Replace vowels with *
-    if (matches) {
-        displayMessage(`Matches (digits found): ${matches.join(", ")}`);
-        displayMessage(`Replaced string: ${replacedString}`);
-    } else {
-        displayMessage("No digits found to match.");
-    }
-});
 
-// Show Date button event listener
-document.getElementById("showDateBtn").addEventListener("click", function () {
-    const currentDate = new Date();
-    displayMessage(`Current date and time: ${currentDate.toString()}`);
-});
+        document.getElementById("convertToStringBtn").addEventListener("click", function () {
+            const numInput = document.getElementById("numInput").value.trim();
+            const number = Number(numInput);
+            if (!isNaN(number)) {
+                const numString = number.toString();
+                displayMessage(`The number as a string: ${numString}`);
+            } else {
+                displayMessage("Please enter a valid number.", true);
+            }
+        });
 
-// Helper function to display messages
-function displayMessage(message, isError = false) {
-    const resultDiv = document.getElementById("result");
-    resultDiv.style.color = isError ? "red" : "black";
-    resultDiv.textContent = message;
-}
+        // Match & Replace button event listener
+        document.getElementById("matchReplaceBtn").addEventListener("click", function () {
+            const inputString = document.getElementById("numInput").value.trim();
+            const regex = /[0-9]/g; // Find all digits
+            const matches = inputString.match(regex); // Match digits in the string
+            const replacedString = inputString.replace(/[aeiouAEIOU]/g, "*"); // Replace vowels with *
+            if (matches) {
+                displayMessage(`Matches (digits found): ${matches.join(", ")}`);
+                displayMessage(`Replaced string: ${replacedString}`);
+            } else {
+                displayMessage("No digits found to match.");
+            }
+        });
 
-// Example of RegEx test and exec usage
-function regexTestExecExample() {
-    const testString = "Hello World! 123";
-    const regex = /\d+/g; // Match one or more digits
-    const testResult = regex.test(testString); // Test if there are digits in the string
-    const execResult = regex.exec(testString); // Extract the first match (digits)
-    displayMessage(`RegEx test result: ${testResult}`);
-    displayMessage(`RegEx exec result: ${execResult}`);
-}
+        // Show Date button event listener
+        document.getElementById("showDateBtn").addEventListener("click", function () {
+            const currentDate = new Date();
+            displayMessage(`Current date and time: ${currentDate.toString()}`);
+        });
 
-// Run the example on page load
-regexTestExecExample();
-</script>
+        // Helper function to display messages
+        function displayMessage(message, isError = false) {
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.color = isError ? "red" : "black";
+            resultDiv.textContent = message;
+        }
+
+        // Example of RegEx test and exec usage
+        function regexTestExecExample() {
+            const testString = "Hello World! 123";
+            const regex = /\d+/g; // Match one or more digits
+            const testResult = regex.test(testString); // Test if there are digits in the string
+            const execResult = regex.exec(testString); // Extract the first match (digits)
+            displayMessage(`RegEx test result: ${testResult}`);
+            displayMessage(`RegEx exec result: ${execResult}`);
+        }
+
+        // Run the example on page load
+        regexTestExecExample();
+
+        $(document).ready(function () {
+            $("#fade-btn").click(function () {
+                $("#box").fadeToggle();
+            });
+
+            $("#slide-btn").click(function () {
+                $("#box").slideToggle();
+            });
+
+            $("#animate-btn").click(function () {
+                $("#box").animate({ width: "200px", height: "200px" });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#callback-btn").click(function () {
+                $("#animate-box").slideUp(1000, function () {
+                    alert("Animation Complete!");
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#click-btn").click(function () {
+                alert("Button was clicked!");
+            });
+
+            $("#hover-text").hover(
+                function () {
+                    $(this).css("color", "red");
+                },
+                function () {
+                    $(this).css("color", "black");
+                }
+            );
+        });
+
+        $(document).ready(function () {
+      // Handle Radio Buttons
+      $("#get-selected-radio").click(function () {
+        const selectedGender = $("input[name='gender']:checked").val();
+        if (selectedGender) {
+          $("#radio-result").text("Selected Gender: " + selectedGender);
+        } else {
+          $("#radio-result").text("No gender selected.");
+        }
+      });
+
+      // Handle Checkboxes
+      $("#get-selected-checkboxes").click(function () {
+        const selectedHobbies = [];
+        $("input[name='hobby']:checked").each(function () {
+          selectedHobbies.push($(this).val());
+        });
+        if (selectedHobbies.length > 0) {
+          $("#checkbox-result").text("Selected Hobbies: " + selectedHobbies.join(", "));
+        } else {
+          $("#checkbox-result").text("No hobbies selected.");
+        }
+      });
+    });
+    </script>
 
 </body>
+
 </html>
