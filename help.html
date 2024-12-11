@@ -1077,6 +1077,56 @@
         document.write("<h2>4. Using match() for numbers</h2>");
         document.write("Numbers in the string: " + numbers.join(", ") + "<br>");
 
+        // 1. Get the current date and time
+        const currentDate = new Date();
+        document.write("<h2>1. Current Date and Time:</h2>");
+        document.write("Current Date and Time: " + currentDate + "<br><br>");
+
+        // 2. Get specific components of the date (year, month, day, etc.)
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1; // getMonth() returns 0-11, so we add 1 for human-readable format
+        const day = currentDate.getDate();
+        document.write("<h2>2. Specific Components of the Date:</h2>");
+        document.write("Year: " + year + "<br>");
+        document.write("Month: " + month + "<br>");
+        document.write("Day: " + day + "<br><br>");
+
+        // 3. Format the date as YYYY-MM-DD (ISO format)
+        const isoDate = currentDate.toISOString().split('T')[0]; // Extract the date part from the ISO string
+        document.write("<h2>3. ISO Date Format:</h2>");
+        document.write("Formatted Date (ISO format): " + isoDate + "<br><br>");
+
+        // 4. Calculate the difference between two dates (in days)
+        const startDate = new Date("2024-01-01");
+        const endDate = new Date("2024-12-31");
+        const timeDifference = endDate - startDate; // Difference in milliseconds
+        const daysDifference = timeDifference / (1000 * 3600 * 24); // Convert milliseconds to days
+        document.write("<h2>4. Date Difference (in days):</h2>");
+        document.write("Days between January 1, 2024, and December 31, 2024: " + daysDifference + " days<br><br>");
+
+        // 5. Adding days to the current date
+        const addedDays = new Date(currentDate);
+        addedDays.setDate(currentDate.getDate() + 10); // Add 10 days
+        document.write("<h2>5. Adding Days to Current Date:</h2>");
+        document.write("Date after adding 10 days: " + addedDays.toDateString() + "<br><br>");
+
+        // 6. Get the current time (hours, minutes, seconds)
+        const currentHour = currentDate.getHours();
+        const currentMinute = currentDate.getMinutes();
+        const currentSecond = currentDate.getSeconds();
+        document.write("<h2>6. Current Time:</h2>");
+        document.write("Current Time: " + currentHour + ":" + currentMinute + ":" + currentSecond + "<br><br>");
+
+        // 7. Display the date in a readable format
+        const readableDate = currentDate.toLocaleString(); // This will format the date and time based on the locale
+        document.write("<h2>7. Readable Date:</h2>");
+        document.write("Readable Date and Time: " + readableDate + "<br><br>");
+
+        // 8. Get the day of the week (e.g., Monday, Tuesday, etc.)
+        const dayOfWeek = currentDate.toLocaleString('en-us', { weekday: 'long' });
+        document.write("<h2>8. Day of the Week:</h2>");
+        document.write("Today is: " + dayOfWeek + "<br><br>");
+
 
 
         
